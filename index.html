@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant R - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base styling */
+        body {
+            background-color: #2D112B; /* Set the dark background on the body */
+            font-family: 'Inter', sans-serif;
+            color: #f8fafc; /* Default text color is light */
+        }
+        
+        /* Parallax Hero Container */
+        .parallax {
+            perspective: 100px;
+            height: 100vh; /* Takes the full height of the screen */
+            overflow-x: hidden;
+            overflow-y: hidden; /* Body handles scrolling, so this prevents internal scrollbars */
+            position: relative;
+            width: 100%;
+        }
+
+        /* Parallax Layers */
+        .parallax__layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            /* The JS will handle the transform for the parallax motion */
+        }
+
+        .parallax__layer img {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        /* The main content area that comes after the parallax hero */
+        .main-content {
+            background: #2D112B;
+            position: relative;
+            z-index: 5; /* Ensures it sits above parallax images if they overlap */
+        }
+
+        /* Manually converted SASS loop to CSS for parallax effect - This sets the initial depth and scale */
+        .parallax__layer__0 { transform: translateZ(-300px) scale(4); }
+        .parallax__layer__1 { transform: translateZ(-250px) scale(3.5); }
+        .parallax__layer__2 { transform: translateZ(-200px) scale(3); }
+        .parallax__layer__3 { transform: translateZ(-150px) scale(2.5); }
+        .parallax__layer__4 { transform: translateZ(-100px) scale(2); }
+        .parallax__layer__5 { transform: translateZ(-50px) scale(1.5); }
+        .parallax__layer__6 { transform: translateZ(0px) scale(1); }
+        
+        /* Add a subtle transition for hover effects */
+        .btn-primary {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(255 255 255 / 0.1), 0 4px 6px -4px rgb(255 255 255 / 0.1);
+        }
+        /* Styling for the experience timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid #4b5563; /* Darker line for the timeline */
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+            padding-bottom: 0;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: -0.7rem;
+            top: 0.1rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2D112B;
+            border-radius: 9999px;
+            border: 2px solid #a78bfa; /* Light purple for contrast */
+        }
+        
+        /* Styles for scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-[#2D112B]/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-lg shadow-black/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Nishant R</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-violet-400">About</a>
+                <a href="#experience" class="text-gray-300 hover:text-violet-400">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:text-violet-400">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-violet-400">Contact</a>
+            </nav>
+            <a href="#contact" class="hidden md:block bg-violet-500 text-white px-4 py-2 rounded-lg hover:bg-violet-600 btn-primary">Hire Me</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="parallax">
+            <div class="parallax__layer parallax__layer__0"><img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_0.png?raw=true" /></div>
+            <div class="parallax__layer parallax__layer__1"><img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_1.png?raw=true" /></div>
+            <div class="parallax__layer parallax__layer__2"><img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_2.png?raw=true" /></div>
+            <div class="parallax__layer parallax__layer__3"><img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_3.png?raw=true" /></div>
+            <div class="parallax__layer parallax__layer__4"><img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_4.png?raw=true" /></div>
+            <div class="parallax__layer parallax__layer__5"><img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_5.png?raw=true" /></div>
+            <div class="parallax__layer parallax__layer__6"><img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_6.png?raw=true" /></div>
+
+            <div class="parallax__layer flex items-center justify-center" style="z-index: 2;">
+                <section id="home" class="text-center p-6">
+                    <h1 class="text-4xl md:text-7xl font-bold text-white leading-tight" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Creative Python Developer</h1>
+                    <p class="mt-4 text-lg text-gray-200 max-w-2xl mx-auto" style="text-shadow: 0 1px 3px rgba(0,0,0,0.5);">I work with Python, specializing in GenAI, LLMs, and backend development.</p>
+                    <div class="mt-8 flex justify-center"> </div>
+                        <a href="#projects" class="bg-violet-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-violet-600 btn-primary">View My Projects</a>
+                        <a href="https://drive.google.com/file/d/1IWKi7H-q2tyxhcqG2hCIZePLIR8NNib5/view?usp=sharing" target="_blank" class="bg-white/90 text-violet-700 px-6 py-3 rounded-lg font-semibold border border-violet-200 hover:bg-white btn-primary">Download CV</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="container mx-auto px-6">
+                <section id="about" class="py-20 scroll-animate">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">About Me</h2>
+                        <p class="text-lg text-gray-400 mt-2">A little bit about my journey.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/3">
+                            <img src="1000024452.jpg" alt="Ghibli Image" class="rounded-lg shadow-lg w-full">
+                        </div>
+                        <div class="md:w-2/3">
+                            <p class="text-gray-300 leading-relaxed">
+                                Hello! I'm Nishant, a passionate software developer based in Bangalore. I specialize in back-end development with a love for creating things in Python. With a background in AIML, I enjoy bridging the gap between code and technology to build products that are both beautiful and functional.I also have my edge towards Data-Science field.
+                                <br><br>
+                                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of tea.I am Proficient in Python, Computer Vision, and data-driven problem solving.Mainly experienced in backend development, real-time systems, and gamified learning projects. Adept at working collaboratively in fast-paced, technical environments
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="experience" class="py-20 bg-[#3a1c38] rounded-2xl -mx-6 px-6 scroll-animate">
+                     <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Work Experience</h2>
+                        <p class="text-lg text-gray-400 mt-2">My professional career path.</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto">
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-briefcase text-xs text-violet-400"></i></div>
+                            <div class="flex justify-between items-start md:items-center flex-col md:flex-row">
+                                <h3 class="text-xl font-bold text-white">Software Engineer Trainee</h3>
+                                <span class="bg-violet-500/20 text-violet-300 text-sm font-medium px-3 py-1 rounded-full mt-2 md:mt-0">July 2025 - Present</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-gray-300 mt-1">Mantrika.ai</h4>
+                            <p class="mt-2 text-gray-400">
+                                Working on a project that automates resume tailoring by fetching documents from Drive, scoring them against a job description, and then enhancing the resume for a better match before generating a final performance report.
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-briefcase text-xs text-violet-400"></i></div>
+                            <div class="flex justify-between items-start md:items-center flex-col md:flex-row">
+                                <h3 class="text-xl font-bold text-white">Project Intern: Developer</h3>
+                                <span class="bg-gray-500/20 text-gray-300 text-sm font-medium px-3 py-1 rounded-full mt-2 md:mt-0">Nov 2024 - May 2025</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-gray-300 mt-1">SuperHuge Studios</h4>
+                            <p class="mt-2 text-gray-400 space-y-3">
+                                <div>
+                                   <h4 class="text-lg font-medium text-gray-300 mt-1">Project 1 : SHOOTOPIA : </h4>
+                                    <p class="mt-2 text-gray-400">
+                                    Developed a real-time shooting game backend using OpenCV to detect IR laser positions and translate them into normalized coordinates. Calibrated screen-to-camera perspective for optimal accuracy; integrated with Unity frontend via UDP sockets.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-300 mt-1">Project 2 : Solitaire Candy World :</h4>
+                                    <p class="mt-2 text-gray-400">  
+                                    Generated card position patterns using clustering and interpolation for scalable level designs. Built a GUI to dynamically generate and save patterns based on user-defined card counts.
+                                    </p>    
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects" class="py-20 scroll-animate">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">My Projects</h2>
+                        <p class="text-lg text-gray-400 mt-2">Here are some of the things I've built.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-[#3a1c38]/60 rounded-lg overflow-hidden project-card border border-gray-700">
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white">Chatbot </h3>
+                                <p class="mt-2 text-gray-400">Designed a multipurpose chatbot that summarizes PDFs, processes images, and responds to queries using Python-based interfaces.</p>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Gemini API</span>
+                                    <span class="bg-green-500/20 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                                </div>
+                                <div class="mt-6 flex gap-4">
+                                    <a href="https://github.com/Nishant082/chatbot" target="_blank" rel="noopener noreferrer" class="text-gray-400 font-semibold hover:underline">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#3a1c38]/60 rounded-lg overflow-hidden project-card border border-gray-700">
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white">Interaction Based Learning</h3>
+                                <p class="mt-2 text-gray-400">Built a 3D interactive learning environment using Three.js + Rapier and gesture recognition with Keras. Integrated real-time ASL gesture input via UDP.</p>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="bg-blue-500/20 text-blue-300 text-xs font-medium px-2.5 py-0.5 rounded-full">3.js</span>
+                                    <span class="bg-orange-500/20 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python (Keras)</span>
+                                    <span class="bg-red-500/20 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Node (Rapier 3D)</span>
+                                </div>
+                                <div class="mt-6 flex gap-4">
+                                    <a href="https://github.com/Nishant082/ASL-learning" target="_blank" rel="noopener noreferrer" class="text-gray-400 font-semibold hover:underline">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#3a1c38]/60 rounded-lg overflow-hidden project-card border border-gray-700">
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white">Music Generation using LSTM Neural Networks</h3>
+                                <p class="mt-2 text-gray-400">Trained LSTM models on musical compositions to auto-generate music based on learned temporal patterns (using MIDI files).</p>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="bg-purple-500/20 text-purple-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                                    <span class="bg-red-500/20 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Neural Networks</span>
+                                </div>
+                                <div class="mt-6 flex gap-4">
+                                    <a href="https://github.com/Nishant082/LSTM-NN" target="_blank" rel="noopener noreferrer" class="text-gray-400 font-semibold hover:underline">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="py-20 scroll-animate">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Get In Touch</h2>
+                        <p class="text-lg text-gray-400 mt-2">I'm currently open to new opportunities. Feel free to reach out!</p>
+                        <div class="mt-8">
+                            <a href="mailto:nishantrajaram7@gmail.com" class="bg-violet-500 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:bg-violet-600 btn-primary inline-block">Say Hello</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <footer class="border-t border-gray-700 mt-16">
+                <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+                    <p>&copy; 2025 Nishant R. All Rights Reserved.</p>
+                    <div class="flex justify-center space-x-6 mt-4">
+                        <a href="https://in.linkedin.com/in/nishant-r-218351254" target="_blank" rel="noopener noreferrer" class="hover:text-violet-400">LinkedIn</a>
+                        <a href="https://github.com/Nishant082/" target="_blank" rel="noopener noreferrer" class="hover:text-violet-400">GitHub</a>
+                        <a href="https://leetcode.com/u/nishant_r_/" target="_blank" rel="noopener noreferrer" class="hover:text-violet-400">LeetCode</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        // --- PARALLAX EFFECT SCRIPT ---
+        // This script creates the parallax effect for the hero section.
+        // It moves the layers at different speeds based on the window scroll position.
+        window.addEventListener('scroll', function() {
+            const parallaxLayers = document.querySelectorAll('.parallax__layer');
+            let scrollPosition = window.pageYOffset;
+
+            parallaxLayers.forEach(function(layer) {
+                // Use a data attribute for speed for cleaner code, but this works for now.
+                let speed = 0.5; // Default speed
+                if (layer.classList.contains('parallax__layer__0')) speed = 0.1;
+                if (layer.classList.contains('parallax__layer__1')) speed = 0.2;
+                if (layer.classList.contains('parallax__layer__2')) speed = 0.3;
+                if (layer.classList.contains('parallax__layer__3')) speed = 0.4;
+                if (layer.classList.contains('parallax__layer__4')) speed = 0.5;
+                if (layer.classList.contains('parallax__layer__5')) speed = 0.7;
+                if (layer.classList.contains('parallax__layer__6')) speed = 0.9;
+                
+                // The hero text layer (the one without a numbered class) will use the default speed.
+                
+                let yPos = scrollPosition * speed;
+                
+                // We need to preserve the original transform (translateZ and scale) from the CSS.
+                // This is a bit tricky, so we'll just apply the Y translation.
+                // For a full effect, we'd re-apply the full transform string here.
+                // This simplified version will still give a great motion effect.
+                layer.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+
+        // --- FADE-IN ON SCROLL SCRIPT ---
+        const animatedElements = document.querySelectorAll('.scroll-animate');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.15 });
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>
