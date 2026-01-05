@@ -1,112 +1,78 @@
 :root {
-    --silver: #a1a1aa;
-    --dark-matte: #0a0a0a;
+    --bg-dark: #050505;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    letter-spacing: -0.01em;
-    background-color: #050505;
+    background-color: var(--bg-dark);
 }
 
-/* Subtle Film Grain */
-.grain::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Grain_Noise.png");
-    opacity: 0.03;
-    pointer-events: none;
-    z-index: 9999;
-}
-
-/* Silver Typography */
-.silver-text {
-    color: var(--silver);
-}
-
+/* Silver Visuals */
 .silver-gradient {
-    background: linear-gradient(to bottom, #ffffff 30%, #444444 100%);
+    background: linear-gradient(to bottom, #ffffff 40%, #555555 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.silver-text {
+    color: #e2e2e2;
+}
+
 /* Glass Nav */
 .glass-nav {
-    background: rgba(5, 5, 5, 0.7);
+    background: rgba(5, 5, 5, 0.8);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Bento Style Cards */
-.bento-card {
+/* Pop-Up Entrance Animation */
+.pop-up {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pop-up.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Experience Cards (Large Boxes) */
+.exp-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 8px;
-    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    border-radius: 32px;
+    cursor: pointer;
+    transition: all 0.4s ease;
 }
 
-.bento-card:hover {
+.exp-card:hover {
     background: rgba(255, 255, 255, 0.04);
+}
+
+/* Project Boxes */
+.project-box {
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    transition: all 0.4s ease;
+}
+
+.project-box:hover {
     border-color: rgba(255, 255, 255, 0.15);
-    transform: scale(1.01);
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-5px);
 }
 
-/* Border Beam Effect (Silver) */
-.border-beam {
-    position: relative;
-    overflow: hidden;
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+    width: 4px;
 }
-
-.border-beam::after {
-    content: "";
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: conic-gradient(
-        from 0deg,
-        transparent 0%,
-        transparent 40%,
-        rgba(255, 255, 255, 0.3) 50%,
-        transparent 60%,
-        transparent 100%
-    );
-    animation: rotate 6s linear infinite;
+::-webkit-scrollbar-track {
+    background: #000;
 }
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Buttons */
-.silver-border-btn {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: transparent;
-    transition: all 0.3s ease;
-}
-
-.silver-border-btn:hover {
-    background: white;
-    color: black;
-}
-
-/* Scroll Animations */
-.reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Custom Selection */
-::selection {
-    background: white;
-    color: black;
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
 }

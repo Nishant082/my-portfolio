@@ -6,102 +6,115 @@
     <title>Nishant R | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-[#050505] text-white antialiased">
 
-    <!-- Subtle Grain Overlay -->
-    <div class="grain"></div>
-
     <header class="fixed top-0 w-full z-50 glass-nav">
         <nav class="container mx-auto px-8 py-5 flex justify-between items-center">
-            <span class="text-xl font-bold tracking-tighter silver-text">NISHANT R</span>
-            <div class="hidden md:flex space-x-12 text-[11px] font-semibold tracking-[0.3em] text-gray-500">
-                <a href="#about" class="hover:text-white transition-colors">ABOUT</a>
-                <a href="#experience" class="hover:text-white transition-colors">EXPERIENCE</a>
-                <a href="#projects" class="hover:text-white transition-colors">PROJECTS</a>
-                <a href="#education" class="hover:text-white transition-colors">EDUCATION</a>
+            <span class="text-xl font-extrabold tracking-tighter silver-text">NR.</span>
+            <div class="hidden md:flex space-x-12 text-[10px] font-bold tracking-[0.3em] text-gray-500 uppercase">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#education" class="hover:text-white transition-colors">Education</a>
+                <!-- Navigation Resume Link -->
+                <a href="https://drive.google.com/file/d/1odFZNL3Wb8PcHvLCa_tQaDXN4kVGo5l8/view?usp=sharing" target="_blank" class="hover:text-white transition-colors">Resume</a>
             </div>
-            <a href="#contact" class="silver-border-btn text-[10px] font-bold px-6 py-2 rounded-sm">CONTACT</a>
+            <a href="mailto:nishantrajaram7@gmail.com" class="border border-white/10 text-[10px] font-bold px-6 py-2 rounded-full hover:bg-white hover:text-black transition-all">LET'S TALK</a>
         </nav>
     </header>
 
-    <main class="relative z-10">
+    <main>
         <!-- Hero Section -->
-        <section class="h-screen flex flex-col justify-center items-center px-6">
-            <div class="text-center reveal">
-                <h1 class="text-6xl md:text-9xl font-bold tracking-tighter mb-4 silver-gradient">
+        <section class="h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden">
+            <div class="text-center z-10">
+                <h1 class="text-7xl md:text-[10rem] font-extrabold tracking-tighter leading-none silver-gradient mb-4">
                     NISHANT R
                 </h1>
                 <p class="max-w-xl mx-auto text-gray-500 text-lg font-light leading-relaxed mb-10 italic">
                     Software Developer specializing in Python, Generative AI, and Backend Architecture.
                 </p>
-                <div class="flex gap-6 justify-center">
-                    <a href="#projects" class="bg-white text-black px-8 py-3 font-bold text-sm hover:bg-gray-200 transition-all">VIEW WORK</a>
-                    <a href="https://drive.google.com/file/d/1odFZNL3Wb8PcHvLCa_tQaDXN4kVGo5l8/view?usp=sharing" target="_blank" class="border border-white/20 px-8 py-3 font-bold text-sm hover:bg-white/5 transition-all">RESUME</a>
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <a href="#projects" class="w-full md:w-auto bg-white text-black px-10 py-4 font-bold text-sm tracking-widest hover:scale-105 transition-all">VIEW WORK</a>
+                    <!-- Main Resume Button -->
+                    <a href="https://drive.google.com/file/d/1GEdGNMquR0Cdsmd9e25wflu-gK0ySeNX/view?usp=sharing" target="_blank" class="w-full md:w-auto border border-white/20 text-white px-10 py-4 font-bold text-sm tracking-widest hover:bg-white hover:text-black transition-all">RESUME</a>
                 </div>
             </div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/[0.02] blur-[120px] rounded-full"></div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-32 container mx-auto px-8">
-            <div class="grid md:grid-cols-2 gap-20 items-center">
-                <div class="border-beam rounded-xl p-[1px]">
-                    <div class="bg-[#0a0a0a] rounded-xl overflow-hidden">
-                        <img src="1000024452.jpg" alt="Profile" class="w-full grayscale hover:grayscale-0 transition-all duration-1000">
+        <section id="about" class="py-32 container mx-auto px-8 pop-up">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/5 p-2">
+                        <img src="2img.png" alt="Profile" class="w-full grayscale group-hover:grayscale-0 transition-all duration-1000 rounded-xl">
                     </div>
                 </div>
                 <div class="space-y-8">
-                    <h2 class="text-3xl font-bold silver-text uppercase tracking-widest">The Profile</h2>
-                    <p class="text-gray-400 text-lg leading-relaxed font-light">
-                        I am a Bangalore-based developer focused on bridging <span class="text-white">AI research</span> and scalable production systems. My approach combines rigorous data-driven problem solving with clean, efficient backend code.
+                    <h2 class="text-4xl font-extrabold silver-text uppercase tracking-tighter">My Profile</h2>
+                    <p class="text-gray-400 text-xl leading-relaxed font-light">
+                        Based in Bangalore, I solve complex problems through <span class="text-white">intelligent automation</span>. I build systems that don't just work—they perform.
                     </p>
-                    <div class="grid grid-cols-2 gap-8 border-t border-white/10 pt-8 text-sm">
-                        <div>
-                            <p class="text-gray-600 uppercase tracking-widest mb-2 font-bold">Focus</p>
-                            <p class="text-gray-300">LLMs, Computer Vision, Backend Systems</p>
+                    <div class="pt-8 border-t border-white/5 grid grid-cols-2 gap-4">
+                        <div class="p-6 bg-white/[0.02] border border-white/5 rounded-xl">
+                            <span class="block text-white font-bold mb-1">Backend</span>
+                            <span class="text-gray-500 text-sm italic">FastAPI, Flask, Python, PostgreSQL</span>
                         </div>
-                        <div>
-                            <p class="text-gray-600 uppercase tracking-widest mb-2 font-bold">Tech</p>
-                            <p class="text-gray-300">Python, FastAPI, Keras, Three.js</p>
+                        <div class="p-6 bg-white/[0.02] border border-white/5 rounded-xl">
+                            <span class="block text-white font-bold mb-1">AI/ML</span>
+                            <span class="text-gray-500 text-sm italic">OpenAI API,LLMs ,API Intgration, MLflow</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience -->
-        <section id="experience" class="py-32 border-t border-white/5">
+        <!-- Work History -->
+        <section id="experience" class="py-32 bg-white/[0.01] border-y border-white/5">
             <div class="container mx-auto px-8">
-                <h2 class="text-sm font-bold text-gray-500 tracking-[0.5em] uppercase mb-16 text-center">Work History</h2>
-                <div class="max-w-5xl mx-auto space-y-4">
-                    <!-- Exp 1 -->
-                    <div class="bento-card p-10 group">
-                        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+                <h2 class="text-sm font-bold text-gray-600 tracking-[0.5em] uppercase mb-16 text-center">Work History</h2>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div class="exp-card pop-up" onclick="toggleExp(this)">
+                        <div class="p-10 flex flex-col md:flex-row justify-between items-center pointer-events-none">
                             <div>
-                                <h3 class="text-2xl font-bold silver-text group-hover:text-white transition-colors">Xarpie Labs</h3>
-                                <p class="text-gray-500">Software Developer Trainee</p>
+                                <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">XARPIE LABS</h3>
+                                <p class="text-gray-500 font-bold tracking-widest text-xs mt-2 uppercase">Software Developer Trainee</p>
                             </div>
-                            <span class="text-gray-600 text-sm font-mono mt-2">2025 — PRESENT</span>
+                            <div class="flex items-center gap-4">
+                                <span class="text-gray-700 font-mono text-sm">2025 — PRES</span>
+                                <i class="fas fa-plus text-xs text-gray-500 transition-transform duration-500 toggle-icon"></i>
+                            </div>
                         </div>
-                        <p class="text-gray-400 text-sm leading-loose">
-                            Architecting Streamlit-based intelligence dashboards. Implementation of XGBoost for predictive analytics and deep integration of OpenAI API for automated document insights and NL-querying.
-                        </p>
+                        <div class="exp-content max-h-0 overflow-hidden transition-all duration-700 px-10">
+                            <div class="pb-10 pt-4 text-gray-400 space-y-4 border-t border-white/5 mt-4">
+                                <p>• Developing Streamlit-based dashboards for predictive analytics using XGBoost.</p>
+                                <p>• Implementing OpenAI API for automated insights and natural language querying.</p>
+                                <p>• Designing automated resume tailoring workflows with Google Drive integration.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Exp 2 -->
-                    <div class="bento-card p-10 group">
-                        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+                    <div class="exp-card pop-up" onclick="toggleExp(this)">
+                        <div class="p-10 flex flex-col md:flex-row justify-between items-center pointer-events-none">
                             <div>
-                                <h3 class="text-2xl font-bold silver-text group-hover:text-white transition-colors">SuperHuge Studios</h3>
-                                <p class="text-gray-500">Project Intern: Developer</p>
+                                <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">SUPERHUGE STUDIOS</h3>
+                                <p class="text-gray-500 font-bold tracking-widest text-xs mt-2 uppercase">Project Intern: Developer</p>
                             </div>
-                            <span class="text-gray-600 text-sm font-mono mt-2">2024 — 2025</span>
+                            <div class="flex items-center gap-4">
+                                <span class="text-gray-700 font-mono text-sm">2024 — 2025</span>
+                                <i class="fas fa-plus text-xs text-gray-500 transition-transform duration-500 toggle-icon"></i>
+                            </div>
                         </div>
-                        <p class="text-gray-400 text-sm leading-loose">
-                            Specialized in Computer Vision for gaming hardware. Developed IR laser position detection systems using OpenCV and implemented data clustering for dynamic level generation.
-                        </p>
+                        <div class="exp-content max-h-0 overflow-hidden transition-all duration-700 px-10">
+                            <div class="pb-10 pt-4 text-gray-400 space-y-4 border-t border-white/5 mt-4">
+                                <p>• Built real-time Computer Vision systems using OpenCV for IR laser detection.</p>
+                                <p>• Integrated Python backend with Unity frontend via UDP sockets.</p>
+                                <p>• Generated scalable card position patterns using clustering for level designs.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -109,41 +122,38 @@
 
         <!-- Projects -->
         <section id="projects" class="py-32 container mx-auto px-8">
-            <h2 class="text-sm font-bold text-gray-500 tracking-[0.5em] uppercase mb-16">Selected Projects</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bento-card p-8 group hover:border-white/30 transition-all">
-                    <div class="h-1 w-12 bg-white/20 mb-6 group-hover:w-full group-hover:bg-white transition-all duration-500"></div>
-                    <h4 class="text-xl font-bold mb-3">AI Chatbot</h4>
-                    <p class="text-gray-500 text-sm mb-6">Multipurpose PDF & Image processor using Gemini API.</p>
-                    <a href="https://github.com/Nishant082/chatbot" class="text-[10px] font-bold tracking-widest uppercase hover:text-white text-gray-600 transition-colors">Source <i class="fas fa-arrow-right ml-1"></i></a>
+            <h2 class="text-sm font-bold text-gray-600 tracking-[0.5em] uppercase mb-16">Selected Works</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="project-box pop-up">
+                    <span class="text-[10px] text-gray-600 font-bold uppercase tracking-[0.3em]">AI Module</span>
+                    <h4 class="text-2xl font-black mt-2 mb-4 uppercase">Chatbot</h4>
+                    <p class="text-gray-500 text-sm font-light mb-8">Multipurpose PDF & Image processor using Gemini API.</p>
+                    <a href="https://github.com/Nishant082/chatbot" class="inline-block border-b border-white/20 pb-1 text-[10px] font-bold tracking-widest hover:border-white transition-all uppercase">Source Code</a>
                 </div>
-
-                <div class="bento-card p-8 group hover:border-white/30 transition-all">
-                    <div class="h-1 w-12 bg-white/20 mb-6 group-hover:w-full group-hover:bg-white transition-all duration-500"></div>
-                    <h4 class="text-xl font-bold mb-3">Interaction Learning</h4>
-                    <p class="text-gray-500 text-sm mb-6">3D Gesture recognition built with Three.js & Keras.</p>
-                    <a href="https://github.com/Nishant082/ASL-learning" class="text-[10px] font-bold tracking-widest uppercase hover:text-white text-gray-600 transition-colors">Source <i class="fas fa-arrow-right ml-1"></i></a>
+                <div class="project-box pop-up">
+                    <span class="text-[10px] text-gray-600 font-bold uppercase tracking-[0.3em]">ML / 3D</span>
+                    <h4 class="text-2xl font-black mt-2 mb-4 uppercase">Gesture</h4>
+                    <p class="text-gray-500 text-sm font-light mb-8">3D Interaction learning environment with Three.js.</p>
+                    <a href="https://github.com/Nishant082/ASL-learning" class="inline-block border-b border-white/20 pb-1 text-[10px] font-bold tracking-widest hover:border-white transition-all uppercase">Source Code</a>
                 </div>
-
-                <div class="bento-card p-8 group hover:border-white/30 transition-all">
-                    <div class="h-1 w-12 bg-white/20 mb-6 group-hover:w-full group-hover:bg-white transition-all duration-500"></div>
-                    <h4 class="text-xl font-bold mb-3">LSTM Music</h4>
-                    <p class="text-gray-500 text-sm mb-6">Neural Network composition based on MIDI datasets.</p>
-                    <a href="https://github.com/Nishant082/LSTM-NN" class="text-[10px] font-bold tracking-widest uppercase hover:text-white text-gray-600 transition-colors">Source <i class="fas fa-arrow-right ml-1"></i></a>
+                <div class="project-box pop-up">
+                    <span class="text-[10px] text-gray-600 font-bold uppercase tracking-[0.3em]">Neural Networks</span>
+                    <h4 class="text-2xl font-black mt-2 mb-4 uppercase">LSTM Music</h4>
+                    <p class="text-gray-500 text-sm font-light mb-8">Music generation using LSTM trained on MIDI files.</p>
+                    <a href="https://github.com/Nishant082/LSTM-NN" class="inline-block border-b border-white/20 pb-1 text-[10px] font-bold tracking-widest hover:border-white transition-all uppercase">Source Code</a>
                 </div>
             </div>
         </section>
 
-        <!-- NEW Education Section -->
+        <!-- Education -->
         <section id="education" class="py-32 border-t border-white/5">
             <div class="container mx-auto px-8">
-                <h2 class="text-sm font-bold text-gray-500 tracking-[0.5em] uppercase mb-16 text-center">Education</h2>
-                <div class="max-w-5xl mx-auto grid gap-6">
-                    <!-- RNSIT -->
-                    <div class="bento-card p-10 border-l-4 border-l-white">
-                        <div class="flex flex-col md:flex-row justify-between mb-4">
-                            <h3 class="text-xl font-bold text-white">RNS Institute of Technology (RNSIT), Bangalore</h3>
-                            <span class="text-gray-500 font-mono text-sm">Dec 2021 — May 2025</span>
+                <h2 class="text-sm font-bold text-gray-600 tracking-[0.5em] uppercase mb-16 text-center">Education</h2>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div class="bg-white/[0.02] border border-white/5 p-10 rounded-3xl pop-up">
+                        <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                            <h3 class="text-2xl font-bold">RNS Institute of Technology (RNSIT)</h3>
+                            <span class="bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full">CGPA 8.65</span>
                         </div>
                         <p class="text-gray-400 italic">B.E. in Computer Science & Engineering (AI/ML Specialization)</p>
                         <p class="text-white mt-4 font-bold">CGPA: 8.65</p>
@@ -172,39 +182,42 @@
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="py-40 text-center">
-            <h2 class="text-6xl font-bold mb-8 silver-gradient tracking-tighter">Let's connect.</h2>
-            <p class="text-gray-500 mb-12 uppercase tracking-widest text-xs">Based in Bangalore • Available Worldwide</p>
-            <a href="mailto:nishantrajaram7@gmail.com" class="text-2xl border-b border-white pb-2 hover:text-gray-400 hover:border-gray-400 transition-all">nishantrajaram7@gmail.com</a>
+        <section id="contact" class="py-40 text-center pop-up">
+            <h2 class="text-5xl md:text-8xl font-black mb-8 silver-gradient tracking-tighter">LET'S BUILD.</h2>
+            <a href="mailto:nishantrajaram7@gmail.com" class="text-xl md:text-3xl font-light hover:text-gray-400 transition-all border-b border-white/10 pb-2">nishantrajaram7@gmail.com</a>
         </section>
     </main>
 
-    <footer class="py-12 border-t border-white/5 text-center text-gray-600 text-[10px] tracking-[0.4em] uppercase">
-        <div class="container mx-auto px-8">
-            <div class="flex justify-center space-x-12 mb-8 text-gray-400 uppercase tracking-[0.2em]">
-                <a href="https://in.linkedin.com/in/nishant-r-218351254" class="hover:text-white transition-colors">LinkedIn</a>
-                <a href="https://github.com/Nishant082/" class="hover:text-white transition-colors">GitHub</a>
-                <a href="https://leetcode.com/u/nishant_r_/" class="hover:text-white transition-colors">LeetCode</a>
-            </div>
-            <p>© 2026 — Designed for Performance</p>
+    <footer class="py-12 border-t border-white/5 text-center text-[10px] font-bold text-gray-700 tracking-[0.5em] uppercase">
+        <div class="flex justify-center gap-8 mb-6">
+            <a href="https://in.linkedin.com/in/nishant-r-218351254" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://github.com/Nishant082/" target="_blank" class="hover:text-white transition-colors">GitHub</a>
         </div>
+        <p>© 2026 NISHANT R. ALL RIGHTS RESERVED.</p>
     </footer>
 
     <script>
-        // Reveal animation on scroll
-        const observerOptions = { threshold: 0.1 };
+        function toggleExp(card) {
+            const content = card.querySelector('.exp-content');
+            const icon = card.querySelector('.toggle-icon');
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = 'rotate(0deg)';
+                card.style.borderColor = 'rgba(255,255,255,0.05)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = 'rotate(45deg)';
+                card.style.borderColor = 'rgba(255,255,255,0.2)';
+            }
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('is-visible');
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('section, .bento-card').forEach(el => {
-            el.classList.add('reveal-on-scroll');
-            observer.observe(el);
-        });
+        document.querySelectorAll('.pop-up').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
