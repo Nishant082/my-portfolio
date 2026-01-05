@@ -1,118 +1,112 @@
 :root {
-    --cyan: #00f2ff;
-    --dark-bg: #050505;
+    --silver: #a1a1aa;
+    --dark-matte: #0a0a0a;
 }
 
 body {
-    font-family: 'Space Grotesk', sans-serif;
-    background-color: var(--dark-bg);
-    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.01em;
+    background-color: #050505;
 }
 
-/* Mesh Background Effect */
-.mesh-gradient {
+/* Subtle Film Grain */
+.grain::before {
+    content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 10% 20%, rgba(0, 242, 255, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(0, 242, 255, 0.05) 0%, transparent 40%);
-    z-index: 0;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Grain_Noise.png");
+    opacity: 0.03;
     pointer-events: none;
+    z-index: 9999;
 }
 
-/* Typography Gradient */
-.text-gradient {
-    background: linear-gradient(to right, #fff, var(--cyan));
+/* Silver Typography */
+.silver-text {
+    color: var(--silver);
+}
+
+.silver-gradient {
+    background: linear-gradient(to bottom, #ffffff 30%, #444444 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.cyan-glow {
-    text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
-}
-
-/* Glassmorphism Navigation */
+/* Glass Nav */
 .glass-nav {
-    background: rgba(5, 5, 5, 0.8);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Glassmorphic Cards */
-.glass-card {
+/* Bento Style Cards */
+.bento-card {
     background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.glass-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(0, 242, 255, 0.3);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+.bento-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.01);
 }
 
-/* Shiny Border Card */
-.shiny-card {
+/* Border Beam Effect (Silver) */
+.border-beam {
     position: relative;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent, rgba(0, 242, 255, 0.2));
+    overflow: hidden;
+}
+
+.border-beam::after {
+    content: "";
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 60%,
+        transparent 100%
+    );
+    animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 /* Buttons */
-.btn-cyan {
-    background: var(--cyan);
-    color: black;
+.silver-border-btn {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
     transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
-    display: inline-block;
 }
 
-.btn-cyan:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+.silver-border-btn:hover {
     background: white;
+    color: black;
 }
 
-/* Project Cards */
-.project-card {
-    opacity: 0.9;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
+/* Scroll Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
 }
 
-.project-card:hover {
+.reveal-on-scroll.visible {
     opacity: 1;
+    transform: translateY(0);
 }
 
-/* Animations */
-@keyframes fadeInReveal {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.reveal {
-    animation: fadeInReveal 1s ease-out forwards;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--dark-bg);
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--cyan);
+/* Custom Selection */
+::selection {
+    background: white;
+    color: black;
 }
