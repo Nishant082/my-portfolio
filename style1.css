@@ -1,0 +1,236 @@
+:root {
+    --bg-dark: #000000;
+    --bg-card: #0a0a0a;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+}
+
+/* Silver Visuals */
+.silver-gradient {
+    background: linear-gradient(to bottom, #ffffff 40%, #444444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.silver-text {
+    color: #e2e2e2;
+}
+
+/* Glass Nav */
+.glass-nav {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero Fade In Animation */
+.fade-in-hero {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-hero.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pop-Up Animation - Strong Effect */
+.pop-up {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pop-up.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Floating Elements */
+.float-element {
+    animation: float 8s ease-in-out infinite;
+}
+
+.float-element-slow {
+    animation: float 12s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px); 
+    }
+    50% { 
+        transform: translateY(-30px) translateX(20px); 
+    }
+}
+
+/* Experience Cards */
+.exp-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.exp-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.exp-card .exp-content {
+    transition: max-height 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Project Boxes */
+.project-box {
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-box:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Scrollbar - Ultra Thin */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Remove focus outline but keep accessibility */
+*:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.3);
+    outline-offset: 4px;
+}
+
+/* Image optimization */
+img {
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* Link hover effects */
+a {
+    transition: all 0.3s ease;
+}
+
+/* Crisp borders */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.project-item {
+    transform: translateX(0);
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Full Width Layout */
+.container {
+    max-width: 100% !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Specific section widths */
+#about .container,
+#experience .container,
+#projects .container,
+#education .container,
+#contact {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Remove max-width constraints */
+.max-w-4xl,
+.max-w-xl {
+    max-width: 1400px;
+}
+
+/* Full width hero */
+.hero-section {
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+/* Adjust grid layouts for wider screens */
+@media (min-width: 1024px) {
+    #about .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+    }
+    
+    #projects .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Make experience and education sections wider */
+#experience .max-w-4xl,
+#education .max-w-4xl {
+    max-width: 1200px;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 90vh;
+    }
+    
+    .pop-up {
+        transform: translateY(30px) scale(0.98);
+    }
+}
