@@ -5,31 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nishant R | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-[#050505] text-white antialiased">
+<body class="bg-[#000000] text-white antialiased">
 
     <header class="fixed top-0 w-full z-50 glass-nav">
         <nav class="container mx-auto px-8 py-5 flex justify-between items-center">
             <span class="text-xl font-extrabold tracking-tighter silver-text">NR.</span>
-            <div class="hidden md:flex space-x-12 text-[10px] font-bold tracking-[0.3em] text-gray-500 uppercase">
+            <div class="hidden md:flex space-x-12 text-[10px] font-bold tracking-[0.3em] text-gray-600 uppercase">
                 <a href="#about" class="hover:text-white transition-colors">About</a>
                 <a href="#experience" class="hover:text-white transition-colors">Experience</a>
                 <a href="#projects" class="hover:text-white transition-colors">Projects</a>
                 <a href="#education" class="hover:text-white transition-colors">Education</a>
-                <!-- Navigation Resume Link -->
                 <a href="https://drive.google.com/file/d/1odFZNL3Wb8PcHvLCa_tQaDXN4kVGo5l8/view?usp=sharing" target="_blank" class="hover:text-white transition-colors">Resume</a>
             </div>
-            <a href="mailto:nishantrajaram7@gmail.com" class="border border-white/10 text-[10px] font-bold px-6 py-2 rounded-full hover:bg-white hover:text-black transition-all">LET'S TALK</a>
+            <a href="mailto:nishantrajaram7@gmail.com" class="border border-white/20 text-[10px] font-bold px-6 py-2 rounded-full hover:bg-white hover:text-black transition-all">LET'S TALK</a>
         </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden">
-            <div class="text-center z-10">
+        <section class="hero-section px-6 relative overflow-hidden">
+            <div class="text-center z-10 fade-in-hero">
                 <h1 class="text-7xl md:text-[10rem] font-extrabold tracking-tighter leading-none silver-gradient mb-4">
                     NISHANT R
                 </h1>
@@ -38,34 +37,34 @@
                 </p>
                 <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
                     <a href="#projects" class="w-full md:w-auto bg-white text-black px-10 py-4 font-bold text-sm tracking-widest hover:scale-105 transition-all">VIEW WORK</a>
-                    <!-- Main Resume Button -->
-                    <a href="https://drive.google.com/file/d/1GEdGNMquR0Cdsmd9e25wflu-gK0ySeNX/view?usp=sharing" target="_blank" class="w-full md:w-auto border border-white/20 text-white px-10 py-4 font-bold text-sm tracking-widest hover:bg-white hover:text-black transition-all">RESUME</a>
+                    <a href="https://drive.google.com/file/d/1GEdGNMquR0Cdsmd9e25wflu-gK0ySeNX/view?usp=sharing" target="_blank" class="w-full md:w-auto border border-white/30 text-white px-10 py-4 font-bold text-sm tracking-widest hover:bg-white hover:text-black transition-all">RESUME</a>
                 </div>
             </div>
-            <div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/[0.02] blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-[-20%] left-[-10%] w-[50%] h-[50%] bg-white/[0.01] blur-[150px] rounded-full float-element"></div>
+            <div class="absolute top-[-20%] right-[-10%] w-[40%] h-[40%] bg-white/[0.008] blur-[150px] rounded-full float-element-slow"></div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-32 container mx-auto px-8 pop-up">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="relative group">
-                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/5 p-2">
+        <section id="about" class="py-32 container mx-auto px-8">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="relative group pop-up">
+                    <div class="bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/10 p-2">
                         <img src="2img.png" alt="Profile" class="w-full grayscale group-hover:grayscale-0 transition-all duration-1000 rounded-xl">
                     </div>
                 </div>
-                <div class="space-y-8">
+                <div class="space-y-8 pop-up">
                     <h2 class="text-4xl font-extrabold silver-text uppercase tracking-tighter">My Profile</h2>
                     <p class="text-gray-400 text-xl leading-relaxed font-light">
                         Based in Bangalore, I solve complex problems through <span class="text-white">intelligent automation</span>. I build systems that don't just work—they perform.
                     </p>
-                    <div class="pt-8 border-t border-white/5 grid grid-cols-2 gap-4">
-                        <div class="p-6 bg-white/[0.02] border border-white/5 rounded-xl">
+                    <div class="pt-8 border-t border-white/10 grid grid-cols-2 gap-4">
+                        <div class="p-6 bg-white/[0.03] border border-white/10 rounded-xl hover:border-white/20 transition-all">
                             <span class="block text-white font-bold mb-1">Backend</span>
                             <span class="text-gray-500 text-sm italic">FastAPI, Flask, Python, PostgreSQL</span>
                         </div>
-                        <div class="p-6 bg-white/[0.02] border border-white/5 rounded-xl">
+                        <div class="p-6 bg-white/[0.03] border border-white/10 rounded-xl hover:border-white/20 transition-all">
                             <span class="block text-white font-bold mb-1">AI/ML</span>
-                            <span class="text-gray-500 text-sm italic">OpenAI API,LLMs ,API Intgration, MLflow</span>
+                            <span class="text-gray-500 text-sm italic">OpenAI API, LLMs, API Integration, MLflow</span>
                         </div>
                     </div>
                 </div>
@@ -73,7 +72,7 @@
         </section>
 
         <!-- Work History -->
-        <section id="experience" class="py-32 bg-white/[0.01] border-y border-white/5">
+        <section id="experience" class="py-32 border-t border-white/10">
             <div class="container mx-auto px-8">
                 <h2 class="text-sm font-bold text-gray-600 tracking-[0.5em] uppercase mb-16 text-center">Work History</h2>
                 <div class="max-w-4xl mx-auto space-y-6">
@@ -81,18 +80,55 @@
                         <div class="p-10 flex flex-col md:flex-row justify-between items-center pointer-events-none">
                             <div>
                                 <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">XARPIE LABS</h3>
-                                <p class="text-gray-500 font-bold tracking-widest text-xs mt-2 uppercase">Software Developer Trainee</p>
+                                <p class="text-gray-500 font-bold tracking-widest text-xs mt-2 uppercase">Software Developer — GenAI & ML Engineering</p>
                             </div>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-700 font-mono text-sm">2025 — PRES</span>
+                            <div class="flex items-center gap-4 mt-4 md:mt-0">
+                                <span class="text-gray-600 font-mono text-sm">July 2025 — PRES</span>
                                 <i class="fas fa-plus text-xs text-gray-500 transition-transform duration-500 toggle-icon"></i>
                             </div>
                         </div>
                         <div class="exp-content max-h-0 overflow-hidden transition-all duration-700 px-10">
-                            <div class="pb-10 pt-4 text-gray-400 space-y-4 border-t border-white/5 mt-4">
-                                <p>• Developing Streamlit-based dashboards for predictive analytics using XGBoost.</p>
-                                <p>• Implementing OpenAI API for automated insights and natural language querying.</p>
-                                <p>• Designing automated resume tailoring workflows with Google Drive integration.</p>
+                            <div class="pb-10 pt-6 space-y-6 border-t border-white/10 mt-4">
+                                
+                                <!-- Project 1 -->
+                                <div class="project-item bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-white/15 transition-all">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h4 class="text-lg font-bold text-white">AI Dashboard Platform</h4>
+                                        <span class="text-[11px] text-gray-600 font-mono uppercase tracking-wider">Python • Streamlit • ML</span>
+                                    </div>
+                                    <ul class="text-gray-400 space-y-2 text-sm">
+                                        <li>• Developed an interactive Streamlit dashboard for a construction company to visualize operational and financial data using pandas and NumPy</li>
+                                        <li>• Integrated geospatial mapping to display quarry locations, competitor bases, and distance metrics from the main source</li>
+                                        <li>• Designed a profit prediction model using Ensemble Learning to estimate profit or loss based on time, traffic, and labor cost factors</li>
+                                        <li>• Added dynamic QnA & summary features to automatically extract key insights and highlight major trends from the dataset</li>
+                                        <li>• Summarized important and key points from the sheets using OpenAI API</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project 2 -->
+                                <div class="project-item bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-white/15 transition-all">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h4 class="text-lg font-bold text-white">Mantrika AI - AI HR</h4>
+                                        <span class="text-[11px] text-gray-600 font-mono uppercase tracking-wider">Flask • OpenAI • SQLite</span>
+                                    </div>
+                                    <ul class="text-gray-400 space-y-2 text-sm">
+                                        <li>• Engineered AI-powered candidate profiling system using Flask and OpenAI GPT-4 API, implementing automated PDF parsing, multi-dimensional scoring algorithms, and RESTful endpoints to process 36+ data points per candidate with structured JSON storage in SQLite</li>
+                                        <li>• Integrated GitHub REST API to analyze 100+ repositories per candidate, building data pipelines for language distribution analysis, CI/CD detection, and code quality metrics to verify technical skills and reduce hiring misjudgments</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project 3 -->
+                                <div class="project-item bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-white/15 transition-all">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h4 class="text-lg font-bold text-white">Professor of Practice Platform</h4>
+                                        <span class="text-[11px] text-gray-600 font-mono uppercase tracking-wider">FastAPI • React • Postgres</span>
+                                    </div>
+                                    <ul class="text-gray-400 space-y-2 text-sm">
+                                        <li>• Developed a comprehensive vetting platform connecting industry professionals with academic institutions, featuring AI-powered credential analysis using OpenAI API, multi-factor authentication (OTP & Google OAuth), and role-based access control for 4 user types</li>
+                                        <li>• Built RESTful APIs with FastAPI and PostgreSQL backend, React.js frontend with dynamic dashboards, integrated SendGrid for transactional emails; implemented document upload/verification system and real-time application status tracking</li>
+                                    </ul>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -101,94 +137,124 @@
                         <div class="p-10 flex flex-col md:flex-row justify-between items-center pointer-events-none">
                             <div>
                                 <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">SUPERHUGE STUDIOS</h3>
-                                <p class="text-gray-500 font-bold tracking-widest text-xs mt-2 uppercase">Project Intern: Developer</p>
+                                <p class="text-gray-500 font-bold tracking-widest text-xs mt-2 uppercase">Project Intern — Computer Vision & Real-time Systems</p>
                             </div>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-700 font-mono text-sm">2024 — 2025</span>
+                            <div class="flex items-center gap-4 mt-4 md:mt-0">
+                                <span class="text-gray-600 font-mono text-sm">Nov 2024 — May 2025</span>
                                 <i class="fas fa-plus text-xs text-gray-500 transition-transform duration-500 toggle-icon"></i>
                             </div>
                         </div>
                         <div class="exp-content max-h-0 overflow-hidden transition-all duration-700 px-10">
-                            <div class="pb-10 pt-4 text-gray-400 space-y-4 border-t border-white/5 mt-4">
-                                <p>• Built real-time Computer Vision systems using OpenCV for IR laser detection.</p>
-                                <p>• Integrated Python backend with Unity frontend via UDP sockets.</p>
-                                <p>• Generated scalable card position patterns using clustering for level designs.</p>
+                            <div class="pb-10 pt-6 space-y-6 border-t border-white/10 mt-4">
+                                
+                                <!-- Project 1 -->
+                                <div class="project-item bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-white/15 transition-all">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h4 class="text-lg font-bold text-white">Shootopia - AI-Powered Gaming System</h4>
+                                        <span class="text-[11px] text-gray-600 font-mono uppercase tracking-wider">OpenCV • Python • UDP</span>
+                                    </div>
+                                    <ul class="text-gray-400 space-y-2 text-sm">
+                                        <li>• Generated real-time computer vision system using OpenCV for IR laser tracking, achieving sub-pixel accuracy and 60fps performance</li>
+                                        <li>• Engineered low-latency UDP communication protocol between Python ML backend and Unity frontend with less than 5ms response time</li>
+                                        <li>• Solved advanced calibration algorithms and coordinate transformation matrices for multi-camera setups and perspective correction</li>
+                                        <li>• Innovated robust image processing pipeline handling varying lighting conditions, improving detection accuracy by 40% compared to baseline</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project 2 -->
+                                <div class="project-item bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-white/15 transition-all">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h4 class="text-lg font-bold text-white">AI-Driven Level Generation System</h4>
+                                        <span class="text-[11px] text-gray-600 font-mono uppercase tracking-wider">K-Means • Python • ML</span>
+                                    </div>
+                                    <ul class="text-gray-400 space-y-2 text-sm">
+                                        <li>• Deployed unsupervised ML algorithms (K-Means clustering) to analyze game level patterns, reducing manual level design effort by 70%</li>
+                                        <li>• Expanded mathematical modeling system using cubic spline interpolation for procedural content generation with designer-controlled parameters</li>
+                                        <li>• Created data-driven GUI tool for level designers, implementing pattern visualization and export functionality with batch processing capabilities</li>
+                                    </ul>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </section>
 
         <!-- Projects -->
-        <section id="projects" class="py-32 container mx-auto px-8">
-            <h2 class="text-sm font-bold text-gray-600 tracking-[0.5em] uppercase mb-16">Selected Works</h2>
+        <section id="projects" class="py-32 container mx-auto px-8 border-t border-white/10">
+            <h2 class="text-sm font-bold text-gray-600 tracking-[0.5em] uppercase mb-16 text-center">Selected Works</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="project-box pop-up">
                     <span class="text-[10px] text-gray-600 font-bold uppercase tracking-[0.3em]">AI Module</span>
                     <h4 class="text-2xl font-black mt-2 mb-4 uppercase">Chatbot</h4>
                     <p class="text-gray-500 text-sm font-light mb-8">Multipurpose PDF & Image processor using Gemini API.</p>
-                    <a href="https://github.com/Nishant082/chatbot" class="inline-block border-b border-white/20 pb-1 text-[10px] font-bold tracking-widest hover:border-white transition-all uppercase">Source Code</a>
+                    <a href="https://github.com/Nishant082/chatbot" class="inline-block border-b border-white/30 pb-1 text-[10px] font-bold tracking-widest hover:border-white transition-all uppercase">Source Code</a>
                 </div>
                 <div class="project-box pop-up">
                     <span class="text-[10px] text-gray-600 font-bold uppercase tracking-[0.3em]">ML / 3D</span>
                     <h4 class="text-2xl font-black mt-2 mb-4 uppercase">Gesture</h4>
                     <p class="text-gray-500 text-sm font-light mb-8">3D Interaction learning environment with Three.js.</p>
-                    <a href="https://github.com/Nishant082/ASL-learning" class="inline-block border-b border-white/20 pb-1 text-[10px] font-bold tracking-widest hover:border-white transition-all uppercase">Source Code</a>
+                    <a href="https://github.com/Nishant082/ASL-learning" class="inline-block border-b border-white/30 pb-1 text-[10px] font-bold tracking-widest hover:border-white transition-all uppercase">Source Code</a>
                 </div>
                 <div class="project-box pop-up">
                     <span class="text-[10px] text-gray-600 font-bold uppercase tracking-[0.3em]">Neural Networks</span>
                     <h4 class="text-2xl font-black mt-2 mb-4 uppercase">LSTM Music</h4>
                     <p class="text-gray-500 text-sm font-light mb-8">Music generation using LSTM trained on MIDI files.</p>
-                    <a href="https://github.com/Nishant082/LSTM-NN" class="inline-block border-b border-white/20 pb-1 text-[10px] font-bold tracking-widest hover:border-white transition-all uppercase">Source Code</a>
+                    <a href="https://github.com/Nishant082/LSTM-NN" class="inline-block border-b border-white/30 pb-1 text-[10px] font-bold tracking-widest hover:border-white transition-all uppercase">Source Code</a>
                 </div>
             </div>
         </section>
 
         <!-- Education -->
-        <section id="education" class="py-32 border-t border-white/5">
+        <section id="education" class="py-32 border-t border-white/10">
             <div class="container mx-auto px-8">
                 <h2 class="text-sm font-bold text-gray-600 tracking-[0.5em] uppercase mb-16 text-center">Education</h2>
                 <div class="max-w-4xl mx-auto space-y-6">
-                    <div class="bg-white/[0.02] border border-white/5 p-10 rounded-3xl pop-up">
-                        <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-                            <h3 class="text-2xl font-bold">RNS Institute of Technology (RNSIT)</h3>
-                            <span class="bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full">CGPA 8.65</span>
-                        </div>
-                        <p class="text-gray-400 italic">B.E. in Computer Science & Engineering (AI/ML Specialization)</p>
-                        <p class="text-white mt-4 font-bold">CGPA: 8.65</p>
+                <!-- College Block -->
+                <div class="bg-white/[0.03] border border-white/10 p-10 rounded-3xl pop-up hover:border-white/20 transition-all">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-2">
+                        <h3 class="text-2xl font-bold">RNS Institute of Technology (RNSIT)</h3>
+                        <span class="bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full">CGPA 8.65</span>
                     </div>
+                    <p class="text-gray-400 italic">B.E. in Computer Science & Engineering (AI/ML Specialization)</p>
+                </div>
 
-                    <!-- School -->
-                    <div class="bento-card p-10 border-l-4 border-l-gray-700">
-                        <div class="flex flex-col md:flex-row justify-between mb-4">
-                            <h3 class="text-xl font-bold text-white">Sri Sri RaviShankar Vidya Mandir, Bangalore</h3>
+                <!-- School Block -->
+                <div class="bg-white/[0.03] border border-white/10 p-10 rounded-3xl pop-up hover:border-white/20 transition-all">
+                    <div class="flex flex-col md:flex-row justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-white">Sri Sri RaviShankar Vidya Mandir, Bangalore</h3>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-gray-400">Grade 12</p>
+                            <p class="text-white font-bold text-lg">80%</p>
+                            <p class="text-gray-600 text-xs mt-1">March 2020 — July 2021</p>
                         </div>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <p class="text-gray-400">Grade 12</p>
-                                <p class="text-white font-bold text-lg">80%</p>
-                                <p class="text-gray-600 text-xs mt-1">March 2020 — July 2021</p>
-                            </div>
-                            <div>
-                                <p class="text-gray-400">Grade 10</p>
-                                <p class="text-white font-bold text-lg">87%</p>
-                                <p class="text-gray-600 text-xs mt-1">March 2018 — May 2019</p>
-                            </div>
+                        <div>
+                            <p class="text-gray-400">Grade 10</p>
+                            <p class="text-white font-bold text-lg">87%</p>
+                            <p class="text-gray-600 text-xs mt-1">March 2018 — May 2019</p>
                         </div>
                     </div>
+                </div>
+            </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="py-40 text-center pop-up">
+        <section id="contact" class="py-40 text-center border-t border-white/10 pop-up">
             <h2 class="text-5xl md:text-8xl font-black mb-8 silver-gradient tracking-tighter">LET'S BUILD.</h2>
-            <a href="mailto:nishantrajaram7@gmail.com" class="text-xl md:text-3xl font-light hover:text-gray-400 transition-all border-b border-white/10 pb-2">nishantrajaram7@gmail.com</a>
+            <div class="flex items-center justify-center gap-3">
+            <svg class="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <a href="mailto:nishantrajaram7@gmail.com" class="text-xl md:text-3xl font-light hover:text-gray-400 transition-all border-b border-white/20 pb-2">nishantrajaram7@gmail.com</a>
+        </div>
         </section>
     </main>
 
-    <footer class="py-12 border-t border-white/5 text-center text-[10px] font-bold text-gray-700 tracking-[0.5em] uppercase">
+    <footer class="py-12 border-t border-white/10 text-center text-[10px] font-bold text-gray-700 tracking-[0.5em] uppercase">
         <div class="flex justify-center gap-8 mb-6">
             <a href="https://in.linkedin.com/in/nishant-r-218351254" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
             <a href="https://github.com/Nishant082/" target="_blank" class="hover:text-white transition-colors">GitHub</a>
@@ -203,21 +269,32 @@
             if (content.style.maxHeight && content.style.maxHeight !== '0px') {
                 content.style.maxHeight = '0px';
                 icon.style.transform = 'rotate(0deg)';
-                card.style.borderColor = 'rgba(255,255,255,0.05)';
+                card.style.borderColor = 'rgba(255,255,255,0.1)';
             } else {
                 content.style.maxHeight = content.scrollHeight + 'px';
                 icon.style.transform = 'rotate(45deg)';
-                card.style.borderColor = 'rgba(255,255,255,0.2)';
+                card.style.borderColor = 'rgba(255,255,255,0.3)';
             }
         }
 
+        // Intersection Observer for Pop-up Effects
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
             });
-        }, { threshold: 0.1 });
+        }, { 
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        });
 
         document.querySelectorAll('.pop-up').forEach(el => observer.observe(el));
+
+        // Hero animation on load
+        window.addEventListener('load', () => {
+            document.querySelector('.fade-in-hero').classList.add('is-visible');
+        });
     </script>
 </body>
 </html>
