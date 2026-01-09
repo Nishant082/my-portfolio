@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Optional: Offset for fixed header so it doesn't cover section titles */
+:target {
+  scroll-margin-top: 100px;
+}
