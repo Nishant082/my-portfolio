@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, ChevronDown, ChevronUp, ExternalLink, Briefcase
 // --- STYLE CONSTANTS ---
 const METALLIC_GRADIENT = "bg-clip-text text-transparent bg-gradient-to-b from-white via-gray-200 to-gray-500 font-extrabold";
 const GLASS_CARD = "bg-gradient-to-br from-white/[0.05] to-transparent backdrop-blur-xl border border-white/10 shadow-2xl hover:border-white/30 transition-all duration-500";
-const SECTION_SPACING = "py-24 md:py-32"; // Standardized uniform spacing
+const SECTION_SPACING = "py-24 md:py-32"; 
 
 // --- ANIMATIONS ---
 const containerVariants = {
@@ -44,7 +44,6 @@ const ProjectDetail = ({ title, stack, items }) => {
         className="w-full flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/5 group-hover:bg-white/[0.04] transition-all"
       >
         <div className="flex items-center gap-3">
-          {/* Refined: font-bold, text-sm, and gray color for a classy look */}
           <span className="font-bold text-gray-300 text-sm uppercase tracking-wider transition-colors group-hover:text-white">
             {title}
           </span>
@@ -123,6 +122,7 @@ const Nav = () => (
         <a href="#about" className="hover:text-white transition-colors">About</a>
         <a href="#experience" className="hover:text-white transition-colors">Experience</a>
         <a href="#projects" className="hover:text-white transition-colors">Projects</a>
+        <a href="https://drive.google.com/file/d/1GEdGNMquR0Cdsmd9e25wflu-gK0ySeNX/view?usp=sharing" className="hover:text-white transition-colors">Resume</a>
       </div>
       <a href="mailto:nishantrajaram7@gmail.com" className="bg-white text-black text-[9px] font-black px-4 py-2 rounded-full hover:scale-105 transition-all uppercase tracking-widest">Connect</a>
     </div>
@@ -130,7 +130,7 @@ const Nav = () => (
 );
 
 const Hero = () => (
-  <section className="h-[80vh] flex flex-col items-center justify-center relative px-6 text-center">
+  <section className="min-h-screen flex flex-col items-center justify-center relative px-6 text-center">
     <motion.div 
       initial={{ opacity: 0, scale: 0.8 }} 
       animate={{ opacity: 1, scale: 1 }} 
@@ -138,14 +138,13 @@ const Hero = () => (
       className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.03] via-transparent to-transparent"
     />
     <motion.div variants={containerVariants} initial="hidden" animate="visible" className="z-10">
-      <motion.span variants={itemVariants} className="text-[10px] font-bold tracking-[0.6em] text-gray-500 uppercase mb-6 block"></motion.span>
-      <motion.h1 variants={itemVariants} className={`text-7xl md:text-[11rem] leading-[0.8] mb-8 ${METALLIC_GRADIENT}`}>
+      <motion.h1 variants={itemVariants} className={`text-7xl md:text-[11rem] leading-[0.8] mb-12 ${METALLIC_GRADIENT}`}>
         NISHANT R
       </motion.h1>
-      <motion.p variants={itemVariants} className="max-w-xl mx-auto text-gray-500 text-lg md:text-xl font-light italic mb-12">
+      <motion.p variants={itemVariants} className="max-w-xl mx-auto text-gray-500 text-lg md:text-xl font-light italic mb-16 tracking-wide">
         Software Developer specializing in Python, Generative AI, and Backend Architecture.
       </motion.p>
-      <motion.div variants={itemVariants} className="flex justify-center">
+      <motion.div variants={itemVariants} className="flex justify-center mt-4">
         <a href="#experience" className="group flex items-center gap-3 bg-white text-black px-10 py-4 rounded-full font-black text-[10px] tracking-widest hover:bg-gray-200 transition-all">
           EXPLORE CAREER <ChevronDown size={14} className="group-hover:translate-y-1 transition-transform" />
         </a>
@@ -156,7 +155,7 @@ const Hero = () => (
 
 const About = () => (
   <section id="about" className={`${SECTION_SPACING} scroll-mt-20 container mx-auto px-6`}>
-    <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 gap-20 items-center max-w-6xl mx-auto">
+    <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="grid md:grid-cols-2 gap-20 items-center max-w-6xl mx-auto">
       <motion.div variants={itemVariants} className="relative aspect-square max-w-md mx-auto md:mx-0">
         <div className="absolute inset-0 border border-white/5 rounded-[40px] rotate-6" />
         <div className="absolute inset-0 border border-white/10 rounded-[40px] -rotate-3 transition-transform duration-1000" />
@@ -173,7 +172,7 @@ const About = () => (
           <div className={`${GLASS_CARD} p-6 rounded-2xl`}>
             <Code2 className="text-white mb-4" size={20} />
             <h4 className="text-white font-bold text-sm mb-1">Backend</h4>
-            <p className="text-gray-500 text-[10px] uppercase tracking-tighter font-mono italic">Python • Flask • FastAPI •  SQL • Postgres</p>
+            <p className="text-gray-500 text-[10px] uppercase tracking-tighter font-mono italic">Python • Flask • FastAPI • SQL • Postgres</p>
           </div>
           <div className={`${GLASS_CARD} p-6 rounded-2xl`}>
             <Sparkles className="text-white mb-4" size={20} />
@@ -203,8 +202,8 @@ const Experience = () => {
       role: "Project Intern — Developer",
       date: "NOV 2024 — MAY 2025",
       projects: [
-        { title: "Shootopia - Real-time Shooting Game", stack: "OpenCV • Python • UDP • GUI(Tkinter)", items: ["Real-time IR laser tracking with <5ms latency.", "Achieved 60fps performance for gaming interaction."] },
-        { title: "Solitaire Candy World", stack: "Python • K-Means Clustering • Cubic Spline Interpolation", items: ["Analyzed card position patterns using clustering and interpolation.", "Reduced manual design effort by 70%."] }
+        { title: "Shootopia - Real-time Shooting Game", stack: "OpenCV • Python • UDP • GUI(Tkinter)", items: ["Developed a real-time IR laser tracking with <10ms latency.", "Achieved 60fps performance for gaming interaction.","Sent IR laser positions (normalized to screen) to Unity frontend via UDP sockets."] },
+        { title: "Solitaire Candy World", stack: "Python • K-Means Clustering • Cubic Spline Interpolation", items: ["Created a tool to generate card position patterns (returned positions as JSON).", "Analyzed and created new card position patterns using clustering and interpolation.", "Reduced manual design effort by 70%."] }
       ]
     }
   ];
@@ -249,7 +248,7 @@ const Projects = () => {
 };
 
 const Education = () => (
-  <section id="education" className={`${SECTION_SPACING} container mx-auto px-6`}>
+  <section id="education" className={`${SECTION_SPACING} scroll-mt-20 container mx-auto px-6`}>
     <SectionHeader title="Academic Base" subtitle="Education" />
     <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
       <motion.div variants={itemVariants} className={`${GLASS_CARD} p-10 rounded-[32px]`}>
