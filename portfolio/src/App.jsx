@@ -44,12 +44,14 @@ const ProjectDetail = ({ title, stack, items }) => {
         className="w-full flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/5 group-hover:bg-white/[0.04] transition-all"
       >
         <div className="flex items-center gap-3">
-          <div className="w-1.5 h-1.5 rounded-full bg-gray-500 group-hover:bg-white transition-colors" />
-          <span className="font-bold text-gray-200 text-sm">{title}</span>
+          {/* Changed from font-black to font-bold and text-md to text-sm */}
+          <span className="font-bold text-gray-200 text-sm uppercase tracking-wider transition-colors group-hover:text-white">
+            {title}
+          </span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="hidden md:block text-[9px] text-gray-600 font-mono tracking-tighter uppercase">{stack}</span>
-          <ChevronDown size={14} className={`text-gray-600 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} />
+          <span className="hidden md:block text-[9px] text-gray-500 font-mono tracking-tighter uppercase">{stack}</span>
+          <ChevronDown size={14} className={`text-gray-500 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} />
         </div>
       </button>
       <AnimatePresence>
@@ -62,8 +64,8 @@ const ProjectDetail = ({ title, stack, items }) => {
           >
             <ul className="p-5 space-y-3 text-xs text-gray-400 font-light border-x border-b border-white/5 rounded-b-xl bg-black/20">
               {items.map((item, idx) => (
-                <li key={idx} className="flex gap-2 leading-relaxed">
-                  <span className="text-white/20">•</span> {item}
+                <li key={idx} className="leading-relaxed">
+                  {item}
                 </li>
               ))}
             </ul>
@@ -136,7 +138,7 @@ const Hero = () => (
       className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.03] via-transparent to-transparent"
     />
     <motion.div variants={containerVariants} initial="hidden" animate="visible" className="z-10">
-      <motion.span variants={itemVariants} className="text-[10px] font-bold tracking-[0.6em] text-gray-500 uppercase mb-6 block">Based in India</motion.span>
+      <motion.span variants={itemVariants} className="text-[10px] font-bold tracking-[0.6em] text-gray-500 uppercase mb-6 block"></motion.span>
       <motion.h1 variants={itemVariants} className={`text-7xl md:text-[11rem] leading-[0.8] mb-8 ${METALLIC_GRADIENT}`}>
         NISHANT R
       </motion.h1>
@@ -171,12 +173,12 @@ const About = () => (
           <div className={`${GLASS_CARD} p-6 rounded-2xl`}>
             <Code2 className="text-white mb-4" size={20} />
             <h4 className="text-white font-bold text-sm mb-1">Backend</h4>
-            <p className="text-gray-500 text-[10px] uppercase tracking-tighter font-mono italic">FastAPI • Python • Postgres</p>
+            <p className="text-gray-500 text-[10px] uppercase tracking-tighter font-mono italic">Python • Flask • FastAPI •  SQL • Postgres</p>
           </div>
           <div className={`${GLASS_CARD} p-6 rounded-2xl`}>
             <Sparkles className="text-white mb-4" size={20} />
             <h4 className="text-white font-bold text-sm mb-1">AI/ML</h4>
-            <p className="text-gray-500 text-[10px] uppercase tracking-tighter font-mono italic">LLMs • RAG • LangChain</p>
+            <p className="text-gray-500 text-[10px] uppercase tracking-tighter font-mono italic">LLMs • RAG • API Integration • Gen AI</p>
           </div>
         </div>
       </motion.div>
@@ -191,18 +193,18 @@ const Experience = () => {
       role: "Software Developer — GenAI & ML Engineering",
       date: "JULY 2025 — PRES",
       projects: [
-        { title: "AI Dashboard Platform", stack: "Python • Streamlit • ML", items: ["Developed interactive visualization for construction metrics.", "Integrated geospatial mapping and Ensemble Learning for profit prediction."] },
-        { title: "Mantrika AI - AI HR", stack: "Flask • OpenAI • SQLite", items: ["Engineered AI candidate profiling using GPT-4 API.", "Integrated GitHub REST API for automated code analysis."] },
-        { title: "Professor of Practice Platform", stack: "FastAPI • React • Postgres", items: ["Developed vetting platform connecting industry professionals with academia.", "Built RESTful APIs and document upload systems."] }
+        { title: "Mantrika AI - AI HR", stack: "Python • Flask • OpenAI • SQLite", items: ["Engineered AI candidate profiling using GPT-4 API.", "Integrated GitHub REST API for automated code analysis.","Linked API calls using Flask and stored details in SQLite database."] },
+        { title: "Professor of Practice Platform", stack: "Python • FastAPI • React • Postgres", items: ["Developed vetting platform connecting industry professionals with academia.", "Built RESTful APIs and document upload systems.","Implemented role-based access control and multi-factor authentication (OTP & Google OAuth)."] },
+        { title: "AI Dashboard Platform", stack: "Python • Streamlit • ML", items: ["Developed interactive visualization for construction metrics.", "Integrated geospatial mapping and Ensemble Learning for profit prediction."] }
       ]
     },
     {
       company: "SUPERHUGE STUDIOS",
-      role: "Project Intern — Computer Vision",
+      role: "Project Intern — Developer",
       date: "NOV 2024 — MAY 2025",
       projects: [
-        { title: "Shootopia CV", stack: "OpenCV • Python • UDP", items: ["Real-time IR laser tracking with <5ms latency.", "Achieved 60fps performance for gaming interaction."] },
-        { title: "Level Generation System", stack: "K-Means • Python • ML", items: ["Used K-Means clustering to analyze game level patterns.", "Reduced manual design effort by 70%."] }
+        { title: "Shootopia - Real-time Shooting Game", stack: "OpenCV • Python • UDP • GUI(Tkinter)", items: ["Real-time IR laser tracking with <5ms latency.", "Achieved 60fps performance for gaming interaction."] },
+        { title: "Solitaire Candy World", stack: "Python • K-Means Clustering • Cubic Spline Interpolation", items: ["Analyzed card position patterns using clustering and interpolation.", "Reduced manual design effort by 70%."] }
       ]
     }
   ];
@@ -219,7 +221,7 @@ const Experience = () => {
 
 const Projects = () => {
   const projects = [
-    { cat: "AI Module", title: "Chatbot", desc: "PDF & Image processor using Gemini API.", link: "https://github.com/Nishant082/chatbot" },
+    { cat: "API Integration", title: "Chatbot", desc: "PDF & Image processor using Gemini API.", link: "https://github.com/Nishant082/chatbot" },
     { cat: "ML / 3D", title: "Gesture", desc: "3D Interaction environment with Three.js.", link: "https://github.com/Nishant082/ASL-learning" },
     { cat: "Neural Networks", title: "LSTM Music", desc: "Music generation trained on MIDI files.", link: "https://github.com/Nishant082/LSTM-NN" }
   ];
