@@ -44,14 +44,14 @@ const ProjectDetail = ({ title, stack, items }) => {
         className="w-full flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/5 group-hover:bg-white/[0.04] transition-all"
       >
         <div className="flex items-center gap-3">
-          {/* Changed from font-black to font-bold and text-md to text-sm */}
-          <span className="font-bold text-gray-200 text-sm uppercase tracking-wider transition-colors group-hover:text-white">
+          {/* Refined: font-bold, text-sm, and gray color for a classy look */}
+          <span className="font-bold text-gray-300 text-sm uppercase tracking-wider transition-colors group-hover:text-white">
             {title}
           </span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="hidden md:block text-[9px] text-gray-500 font-mono tracking-tighter uppercase">{stack}</span>
-          <ChevronDown size={14} className={`text-gray-500 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} />
+          <span className="hidden md:block text-[9px] text-gray-600 font-mono tracking-tighter uppercase">{stack}</span>
+          <ChevronDown size={14} className={`text-gray-600 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} />
         </div>
       </button>
       <AnimatePresence>
