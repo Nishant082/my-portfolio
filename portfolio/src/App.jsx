@@ -1,7 +1,11 @@
-import React, { useState, useMemo } from 'react';
-// Added 'motion' to the import list below
+import React, { useState, useMemo, useRef, useEffect } from 'react';
+import './App.css';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, Linkedin, Mail, ChevronDown, ChevronUp, ExternalLink, Briefcase, GraduationCap, Code2, Sparkles } from 'lucide-react';
+import aiBotImg from './assets/aiBot_.png';
+import aslImg from './assets/aslImg.png';
+import lstmImg from './assets/rnnImg.png';
 
 // --- GENERATIVE BACKGROUND ---
 const generateStars = (count) => {
@@ -183,7 +187,7 @@ const About = () => (
       <motion.div variants={itemVariants} className="space-y-6 md:space-y-8 order-1 md:order-2 text-center md:text-left">
         <h2 className={`text-4xl md:text-5xl font-black uppercase tracking-tighter ${METALLIC_GRADIENT}`}>My Profile</h2>
         <p className="text-gray-400 text-base md:text-xl font-light leading-relaxed">
-          Based in Bangalore, I solve complex problems through <span className="text-white">intelligent automation</span>. I build systems that don't just work—they perform.
+          Based in Bangalore, I solve complex problems through <span className="text-white">intelligent automation</span>. I build systems that don't just work they perform :) 
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className={`${GLASS_CARD} p-5 md:p-6 rounded-2xl`}>
@@ -205,9 +209,17 @@ const About = () => (
 const Experience = () => {
   const history = [
     {
+      company: "Peterson Technology Partners",
+      role: "Junior Software Developer — Conversational AI",
+      date: "FEB 2026 — PRESENT",
+      projects: [
+        { title: "Building Conversational Flows", stack: "Internal Apps and Tools", items: ["Designed and implemented conversational flows using internal tools.", "Enhanced user experience through intuitive dialogue design and seamless integration with backend systems.","Worked with linking APIs seamlessly to ensure smooth data flow and conversation continuity."] },
+      ]
+    },
+    {
       company: "XARPIE LABS",
       role: "Software Developer — GenAI & ML Engineering",
-      date: "JULY 2025 — PRES",
+      date: "JULY 2025 — FEB 2026",
       projects: [
         { title: "Mantrika AI - AI HR", stack: "Python • Flask • OpenAI • SQLite", items: ["Engineered AI candidate profiling using GPT-4 API.", "Integrated GitHub REST API for automated code analysis.","Linked API calls using Flask and stored details in SQLite database."] },
         { title: "Professor of Practice Platform", stack: "Python • FastAPI • React • Postgres", items: ["Developed vetting platform connecting industry professionals with academia.", "Built RESTful APIs and document upload systems.","Implemented role-based access control and multi-factor authentication (OTP & Google OAuth)."] },
@@ -237,30 +249,119 @@ const Experience = () => {
 
 const Projects = () => {
   const projects = [
-    { cat: "API Integration", title: "Chatbot", desc: "PDF & Image processor using Gemini API.", link: "https://github.com/Nishant082/chatbot" },
-    { cat: "ML / 3D", title: "Gesture", desc: "3D Interaction environment with Three.js.", link: "https://github.com/Nishant082/ASL-learning" },
-    { cat: "Neural Networks", title: "LSTM Music", desc: "Music generation trained on MIDI files.", link: "https://github.com/Nishant082/LSTM-NN" }
+    {
+      cat: "API Integration",
+      title: "Chatbot",
+      desc: "PDF & Image processor using Gemini API.",
+      link: "https://github.com/Nishant082/chatbot",
+      image: aiBotImg
+    },
+    {
+      cat: "ML / 3D",
+      title: "Gesture",
+      desc: "3D interaction environment with Three.js.",
+      link: "https://github.com/Nishant082/ASL-learning",
+      image: aslImg
+    },
+    {
+      cat: "Neural Networks",
+      title: "LSTM Music",
+      desc: "Music generation trained on MIDI files.",
+      link: "https://github.com/Nishant082/LSTM-NN",
+      image: lstmImg
+    }
   ];
 
   return (
     <section id="projects" className={`${SECTION_SPACING} scroll-mt-20 bg-white/[0.01] border-y border-white/5`}>
       <div className="container mx-auto px-6">
         <SectionHeader title="Crafted Works" subtitle="Portfolio" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div className="crafted-container max-w-6xl mx-auto">
           {projects.map((p, i) => (
-            <motion.div key={i} variants={itemVariants} whileHover={{ y: -10 }} className={`${GLASS_CARD} p-8 md:p-10 rounded-[24px] md:rounded-[32px] group relative overflow-hidden`}>
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
-              <span className="text-[8px] md:text-[9px] text-gray-500 font-black uppercase tracking-[0.3em]">{p.cat}</span>
-              <h4 className="text-xl md:text-2xl font-black mt-4 mb-4 uppercase text-white tracking-tighter">{p.title}</h4>
-              <p className="text-gray-500 text-xs md:text-sm font-light mb-8 md:mb-10 leading-relaxed italic line-clamp-2">"{p.desc}"</p>
-              <a href={p.link} target="_blank" className="flex items-center gap-2 text-[9px] md:text-[10px] font-bold text-white group-hover:gap-4 transition-all uppercase tracking-widest">
-                Source Code <ExternalLink size={12} />
-              </a>
+            <motion.div key={i} variants={itemVariants}>
+              <CraftedCard {...p} />
             </motion.div>
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+const CraftedCard = ({ cat, title, desc, link, image }) => {
+  const cardRef = useRef(null);
+  const [bounds, setBounds] = useState({ width: 0, height: 0 });
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const leaveDelayRef = useRef(null);
+
+  useEffect(() => {
+    if (!cardRef.current) return;
+    const updateBounds = () => {
+      setBounds({
+        width: cardRef.current.offsetWidth,
+        height: cardRef.current.offsetHeight
+      });
+    };
+
+    updateBounds();
+    window.addEventListener("resize", updateBounds);
+    return () => {
+      window.removeEventListener("resize", updateBounds);
+      if (leaveDelayRef.current) clearTimeout(leaveDelayRef.current);
+    };
+  }, []);
+
+  const mousePX = bounds.width ? mouse.x / bounds.width : 0;
+  const mousePY = bounds.height ? mouse.y / bounds.height : 0;
+
+  const cardStyle = {
+    transform: `rotateY(${mousePX * 30}deg) rotateX(${mousePY * -30}deg)`
+  };
+
+  const cardBgStyle = {
+    transform: `translateX(${mousePX * -40}px) translateY(${mousePY * -40}px)`,
+    backgroundImage: `url(${image})`
+  };
+
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    setMouse({
+      x: e.clientX - rect.left - bounds.width / 2,
+      y: e.clientY - rect.top - bounds.height / 2
+    });
+  };
+
+  const handleMouseEnter = () => {
+    if (leaveDelayRef.current) clearTimeout(leaveDelayRef.current);
+  };
+
+  const handleMouseLeave = () => {
+    leaveDelayRef.current = setTimeout(() => {
+      setMouse({ x: 0, y: 0 });
+    }, 1000);
+  };
+
+  return (
+    <div
+      className="crafted-card-wrap"
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="crafted-card" style={cardStyle}>
+        <div className="crafted-card-bg" style={cardBgStyle} />
+        <div className="crafted-card-info">
+          <span className="crafted-card-cat">{cat}</span>
+          <h4>{title}</h4>
+          <p>{desc}</p>
+          <a href={link} target="_blank" rel="noreferrer">
+            Source Code <ExternalLink size={12} />
+          </a>
+        </div>
+      </div>
+    </div>
   );
 };
 
