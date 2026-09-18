@@ -3,9 +3,6 @@ import './App.css';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, Linkedin, Mail, ChevronDown, ChevronUp, ExternalLink, Briefcase, GraduationCap, Code2, Sparkles } from 'lucide-react';
-import aiBotImg from './assets/aiBot_.png';
-import aslImg from './assets/aslImg.png';
-import lstmImg from './assets/rnnImg.png';
 
 // --- GENERATIVE BACKGROUND ---
 const generateStars = (count) => {
@@ -36,8 +33,8 @@ const StarBackground = () => {
 };
 
 // --- STYLE CONSTANTS ---
-const METALLIC_GRADIENT = "bg-clip-text text-transparent bg-gradient-to-b from-white via-gray-200 to-gray-500 font-extrabold";
-const GLASS_CARD = "bg-gradient-to-br from-white/[0.05] to-transparent backdrop-blur-xl border border-white/10 shadow-2xl hover:border-white/30 transition-all duration-500";
+const METALLIC_GRADIENT = "bg-clip-text text-transparent bg-gradient-to-b from-lime-300 via-green-400 to-emerald-600 font-black pixel-heading";
+const GLASS_CARD = "bg-[#1b1f16] border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[8px_8px_0_0_#65a30d] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all duration-200";
 const SECTION_SPACING = "py-16 md:py-32"; 
 
 // --- ANIMATIONS ---
@@ -55,8 +52,8 @@ const itemVariants = {
 
 const SectionHeader = ({ title, subtitle }) => (
   <motion.div variants={itemVariants} className="text-center mb-12 md:mb-20">
-    <span className="text-[8px] md:text-[10px] font-bold tracking-[0.4em] md:tracking-[0.5em] text-gray-500 uppercase block mb-4">— {subtitle} —</span>
-    <h2 className={`text-3xl md:text-5xl uppercase tracking-tighter ${METALLIC_GRADIENT}`}>{title}</h2>
+    <span className="text-[8px] md:text-[10px] font-bold tracking-[0.4em] md:tracking-[0.5em] text-lime-500/70 uppercase block mb-4">— {subtitle} —</span>
+    <h2 className={`text-2xl md:text-4xl uppercase ${METALLIC_GRADIENT}`}>{title}</h2>
   </motion.div>
 );
 
@@ -66,7 +63,7 @@ const ProjectDetail = ({ title, stack, items }) => {
     <div className="mb-4 group">
       <button 
         onClick={() => setIsOpen(!isOpen)} 
-        className="w-full flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/5 group-hover:bg-white/[0.04] transition-all"
+        className="w-full flex items-center justify-between p-4 bg-[#0d0f0a] border-2 border-black group-hover:bg-[#171a11] transition-all"
       >
         <div className="flex items-center gap-3">
           {/* Using Semibold (600) instead of Black (900) for smoothness */}
@@ -87,7 +84,7 @@ const ProjectDetail = ({ title, stack, items }) => {
             exit={{ height: 0, opacity: 0 }} 
             className="overflow-hidden"
           >
-            <ul className="p-5 space-y-3 text-xs text-gray-400 font-light border-x border-b border-white/5 rounded-b-xl bg-black/10 leading-relaxed">
+            <ul className="p-5 space-y-3 text-xs text-gray-400 font-light border-x-2 border-b-2 border-black rounded-none bg-black/30 leading-relaxed">
               {items.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
@@ -103,9 +100,9 @@ const ExperienceCard = ({ company, role, date, projects }) => {
   // Set to false so it's closed by default
   const [isExpanded, setIsExpanded] = useState(false); 
   return (
-    <motion.div variants={itemVariants} className="relative pl-8 pb-12 border-l border-white/10 last:border-0">
-      <div className="absolute left-[-5.5px] top-0 w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.5)]" />
-      <div className={`${GLASS_CARD} rounded-3xl overflow-hidden`}>
+    <motion.div variants={itemVariants} className="relative pl-8 pb-12 border-l-4 border-black last:border-0">
+      <div className="absolute left-[-8.5px] top-0 w-3.5 h-3.5 bg-lime-400 border-2 border-black shadow-[0_0_0_2px_#000]" />
+      <div className={`${GLASS_CARD} rounded-none overflow-hidden`}>
         <div 
           onClick={() => setIsExpanded(!isExpanded)} 
           className="p-8 cursor-pointer flex flex-col md:flex-row justify-between items-start md:items-center gap-4 group"
@@ -119,7 +116,7 @@ const ExperienceCard = ({ company, role, date, projects }) => {
             <h3 className="text-2xl font-bold text-white tracking-tight uppercase">{company}</h3>
             <p className="text-gray-400 text-xs font-medium tracking-tight mt-1">{role}</p>
           </div>
-          <div className={`p-3 rounded-full border border-white/10 transition-transform duration-500 ${isExpanded ? 'rotate-180 bg-white text-black' : 'text-white'}`}>
+          <div className={`p-3 border-2 border-black transition-transform duration-500 ${isExpanded ? 'rotate-180 bg-lime-400 text-black' : 'bg-[#0d0f0a] text-lime-400'}`}>
             <ChevronDown size={20} />
           </div>
         </div>
@@ -140,14 +137,14 @@ const ExperienceCard = ({ company, role, date, projects }) => {
 
 const Nav = () => (
   <motion.nav initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-2xl">
-    <div className="bg-black/60 backdrop-blur-2xl border border-white/10 rounded-full px-6 md:px-8 py-3 md:py-4 flex justify-between items-center shadow-2xl">
-      <span className="font-black text-white tracking-tighter cursor-pointer text-sm md:text-base" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>NR.</span>
+    <div className="bg-[#1b1f16] border-4 border-black shadow-[5px_5px_0_0_#000] px-6 md:px-8 py-3 md:py-4 flex justify-between items-center">
+      <span className="pixel-heading text-lime-400 cursor-pointer text-xs md:text-sm" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>NR.</span>
       <div className="flex space-x-4 md:space-x-8 text-[8px] md:text-[9px] font-bold tracking-[0.15em] md:tracking-[0.2em] text-gray-400 uppercase">
-        <a href="#about" className="hover:text-white transition-colors">About</a>
-        <a href="#experience" className="hover:text-white transition-colors">Work</a>
-        <a href="#projects" className="hover:text-white transition-colors">Projects</a>
+        <a href="#about" className="hover:text-lime-400 transition-colors">About</a>
+        <a href="#experience" className="hover:text-lime-400 transition-colors">Work</a>
+        <a href="#projects" className="hover:text-lime-400 transition-colors">Projects</a>
       </div>
-      <a href="mailto:nishantrajaram7@gmail.com" className="bg-white text-black text-[8px] md:text-[9px] font-black px-3 md:px-4 py-1.5 md:py-2 rounded-full hover:scale-105 transition-all uppercase tracking-widest flex-shrink-0">Connect</a>
+      <a href="mailto:nishantrajaram7@gmail.com" className="bg-lime-400 text-black border-2 border-black text-[8px] md:text-[9px] font-black px-3 md:px-4 py-1.5 md:py-2 hover:bg-lime-300 transition-all uppercase tracking-widest flex-shrink-0">Connect</a>
     </div>
   </motion.nav>
 );
@@ -156,17 +153,17 @@ const Hero = () => (
   <section className="min-h-screen flex flex-col items-center justify-center relative px-6 text-center overflow-hidden">
     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.5 }} className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.03] via-transparent to-transparent" />
     <motion.div variants={containerVariants} initial="hidden" animate="visible" className="z-10 w-full">
-      <motion.h1 variants={itemVariants} className={`text-5xl sm:text-7xl md:text-9xl lg:text-[11rem] leading-[0.9] mb-8 md:mb-12 ${METALLIC_GRADIENT}`}>
+      <motion.h1 variants={itemVariants} className={`text-3xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.3] mb-8 md:mb-12 ${METALLIC_GRADIENT}`}>
         NISHANT R
       </motion.h1>
       <motion.p variants={itemVariants} className="max-w-sm md:max-w-xl mx-auto text-gray-500 text-sm md:text-xl font-light italic mb-12 md:mb-16 tracking-wide leading-relaxed">
         Software Developer specializing in Python, Generative AI, and Backend Architecture.
       </motion.p>
       <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#about" className="group flex items-center justify-center gap-3 bg-white text-black px-8 md:px-10 py-3 md:py-4 rounded-full font-black text-[9px] md:text-[10px] tracking-widest hover:bg-gray-200 transition-all">
+        <a href="#about" className="group flex items-center justify-center gap-3 bg-lime-400 text-black border-4 border-black shadow-[5px_5px_0_0_#000] px-8 md:px-10 py-3 md:py-4 font-black text-[9px] md:text-[10px] tracking-widest hover:bg-lime-300 hover:shadow-[7px_7px_0_0_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all">
           EXPLORE CAREER <ChevronDown size={12} className="group-hover:translate-y-1 transition-transform" />
         </a>
-        <a href="https://drive.google.com/file/d/1GEdGNMquR0Cdsmd9e25wflu-gK0ySeNX/view?usp=sharing" target="_blank" className="flex items-center justify-center gap-3 border border-white/20 text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-black text-[9px] md:text-[10px] tracking-widest hover:bg-white/5 transition-all">
+        <a href="https://drive.google.com/file/d/1GEdGNMquR0Cdsmd9e25wflu-gK0ySeNX/view?usp=sharing" target="_blank" className="flex items-center justify-center gap-3 bg-[#1b1f16] border-4 border-black shadow-[5px_5px_0_0_#000] text-white px-8 md:px-10 py-3 md:py-4 font-black text-[9px] md:text-[10px] tracking-widest hover:bg-[#242a1c] hover:shadow-[7px_7px_0_0_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all">
           RESUME <ExternalLink size={12} />
         </a>
       </motion.div>
@@ -178,9 +175,8 @@ const About = () => (
   <section id="about" className={`${SECTION_SPACING} scroll-mt-20 container mx-auto px-6`}>
     <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center max-w-6xl mx-auto">
       <motion.div variants={itemVariants} className="relative aspect-square max-w-[300px] md:max-w-md mx-auto md:mx-0 order-2 md:order-1">
-        <div className="absolute inset-0 border border-white/5 rounded-[30px] md:rounded-[40px] rotate-6" />
-        <div className="absolute inset-0 border border-white/10 rounded-[30px] md:rounded-[40px] -rotate-3 transition-transform duration-1000" />
-        <div className="relative h-full w-full rounded-[30px] md:rounded-[40px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-white/20">
+        <div className="absolute inset-0 border-4 border-lime-500/30 rotate-3" />
+        <div className="relative h-full w-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border-4 border-black shadow-[6px_6px_0_0_#000]">
           <img src="2img.png" alt="Profile" className="w-full h-full object-cover" />
         </div>
       </motion.div>
@@ -190,13 +186,13 @@ const About = () => (
           Based in Bangalore, I solve complex problems through <span className="text-white">intelligent automation</span>. I build systems that don't just work they perform :) 
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className={`${GLASS_CARD} p-5 md:p-6 rounded-2xl`}>
-            <Code2 className="text-white mb-3 md:mb-4 mx-auto md:mx-0" size={20} />
+          <div className={`${GLASS_CARD} p-5 md:p-6 rounded-none`}>
+            <Code2 className="text-lime-400 mb-3 md:mb-4 mx-auto md:mx-0" size={20} />
             <h4 className="text-white font-bold text-xs md:text-sm mb-1 text-center md:text-left">Backend</h4>
             <p className="text-gray-500 text-[9px] md:text-[10px] uppercase tracking-tighter font-mono italic text-center md:text-left">Python • Flask • FastAPI • SQL • Postgres</p>
           </div>
-          <div className={`${GLASS_CARD} p-5 md:p-6 rounded-2xl`}>
-            <Sparkles className="text-white mb-3 md:mb-4 mx-auto md:mx-0" size={20} />
+          <div className={`${GLASS_CARD} p-5 md:p-6 rounded-none`}>
+            <Sparkles className="text-lime-400 mb-3 md:mb-4 mx-auto md:mx-0" size={20} />
             <h4 className="text-white font-bold text-xs md:text-sm mb-1 text-center md:text-left">AI/ML</h4>
             <p className="text-gray-500 text-[9px] md:text-[10px] uppercase tracking-tighter font-mono italic text-center md:text-left">LLMs • RAG • API Integration • Gen AI</p>
           </div>
@@ -253,22 +249,19 @@ const Projects = () => {
       cat: "API Integration",
       title: "Chatbot",
       desc: "PDF & Image processor using Gemini API.",
-      link: "https://github.com/Nishant082/chatbot",
-      image: aiBotImg
+      link: "https://github.com/Nishant082/chatbot"
     },
     {
       cat: "ML / 3D",
       title: "Gesture",
       desc: "3D interaction environment with Three.js.",
-      link: "https://github.com/Nishant082/ASL-learning",
-      image: aslImg
+      link: "https://github.com/Nishant082/ASL-learning"
     },
     {
       cat: "Neural Networks",
       title: "LSTM Music",
       desc: "Music generation trained on MIDI files.",
-      link: "https://github.com/Nishant082/LSTM-NN",
-      image: lstmImg
+      link: "https://github.com/Nishant082/LSTM-NN"
     }
   ];
 
@@ -288,7 +281,7 @@ const Projects = () => {
   );
 };
 
-const CraftedCard = ({ cat, title, desc, link, image }) => {
+const CraftedCard = ({ cat, title, desc, link }) => {
   const cardRef = useRef(null);
   const [bounds, setBounds] = useState({ width: 0, height: 0 });
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -319,8 +312,7 @@ const CraftedCard = ({ cat, title, desc, link, image }) => {
   };
 
   const cardBgStyle = {
-    transform: `translateX(${mousePX * -40}px) translateY(${mousePY * -40}px)`,
-    backgroundImage: `url(${image})`
+    transform: `translateX(${mousePX * -30}px) translateY(${mousePY * -30}px)`
   };
 
   const handleMouseMove = (e) => {
@@ -351,7 +343,10 @@ const CraftedCard = ({ cat, title, desc, link, image }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="crafted-card" style={cardStyle}>
-        <div className="crafted-card-bg" style={cardBgStyle} />
+        <div className="crafted-card-bg" style={cardBgStyle}>
+          <span className="crafted-pixel-grid" />
+          <span className="crafted-scanlines" />
+        </div>
         <div className="crafted-card-info">
           <span className="crafted-card-cat">{cat}</span>
           <h4>{title}</h4>
@@ -369,15 +364,15 @@ const Education = () => (
   <section id="education" className={`${SECTION_SPACING} container mx-auto px-6`}>
     <SectionHeader title="Academic Base" subtitle="Education" />
     <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
-      <motion.div variants={itemVariants} className={`${GLASS_CARD} p-8 md:p-10 rounded-[24px] md:rounded-[32px]`}>
+      <motion.div variants={itemVariants} className={`${GLASS_CARD} p-8 md:p-10 rounded-none md:rounded-none`}>
         <div className="flex justify-between items-start mb-6">
-          <GraduationCap className="text-white" size={28} />
-          <span className="text-[10px] md:text-xs font-mono text-white bg-white/10 px-3 py-1 rounded-full">8.65 CGPA</span>
+          <GraduationCap className="text-lime-400" size={28} />
+          <span className="text-[10px] md:text-xs font-mono text-black bg-lime-400 border-2 border-black px-3 py-1">8.65 CGPA</span>
         </div>
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tighter uppercase mb-2 text-center md:text-left">RNS Institute of Technology</h3>
         <p className="text-gray-400 italic font-light text-xs md:text-sm text-center md:text-left">B.E. Computer Science (AI/ML Specialization)</p>
       </motion.div>
-      <motion.div variants={itemVariants} className={`${GLASS_CARD} p-8 md:p-10 rounded-[24px] md:rounded-[32px]`}>
+      <motion.div variants={itemVariants} className={`${GLASS_CARD} p-8 md:p-10 rounded-none md:rounded-none`}>
         <div className="flex justify-between items-start mb-6 text-center md:text-left">
           <GraduationCap className="text-white/40" size={28} />
           <div className="flex flex-col items-end gap-1 font-mono text-gray-500 text-[9px] md:text-[10px] uppercase">
@@ -396,7 +391,7 @@ const Footer = () => (
   <footer className="py-16 md:py-24 border-t border-white/5 bg-black relative overflow-hidden">
     <div className="container mx-auto px-6 text-center">
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-        <h2 className={`text-4xl md:text-9xl font-black mb-8 md:mb-12 tracking-tighter ${METALLIC_GRADIENT}`}>LET'S BUILD.</h2>
+        <h2 className={`text-3xl md:text-6xl mb-8 md:mb-12 leading-[1.3] ${METALLIC_GRADIENT}`}>LET'S BUILD.</h2>
         <a href="mailto:nishantrajaram7@gmail.com" className="text-base md:text-2xl font-light text-gray-400 hover:text-white transition-all border-b border-white/10 pb-2">
           nishantrajaram7@gmail.com
         </a>
@@ -412,7 +407,7 @@ const Footer = () => (
 
 export default function App() {
   return (
-    <div className="bg-[#030303] min-h-screen text-white font-sans selection:bg-white selection:text-black overflow-x-hidden relative">
+    <div className="bg-[#14130f] min-h-screen text-white font-pixel-body selection:bg-lime-400 selection:text-black overflow-x-hidden relative">
       <StarBackground />
       <Nav />
       <motion.main initial="hidden" animate="visible" className="relative z-10">

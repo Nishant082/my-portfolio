@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+.pixel-heading {
+  font-family: "Press Start 2P", monospace;
+  line-height: 1.5;
+}
+
+.font-pixel-body {
+  font-family: "VT323", monospace;
+  font-size: 1.15rem;
+}
+
 .crafted-container {
   padding: 8px 0;
   display: flex;
@@ -19,30 +31,64 @@
   height: 320px;
   background-color: #111;
   overflow: hidden;
-  border-radius: 14px;
-  box-shadow:
-    rgba(0, 0, 0, 0.66) 0 30px 60px 0,
-    inset #222 0 0 0 2px,
-    inset rgba(255, 255, 255, 0.25) 0 0 0 3px;
+  border-radius: 0;
+  border: 4px solid #000;
+  box-shadow: 7px 7px 0 0 #000;
   transition:
     1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
-    box-shadow 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    box-shadow 0.3s ease;
 }
 
 .crafted-card-bg {
-  opacity: 0.55;
+  opacity: 1;
   position: absolute;
   top: -20px;
   left: -20px;
   width: calc(100% + 40px);
   height: calc(100% + 40px);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  transition:
-    1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
-    opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  overflow: hidden;
+  background: #1a2e1a;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   pointer-events: none;
+}
+
+/* Dithered pixel-grid texture, Minecraft-ish two-tone checker with noise blocks */
+.crafted-pixel-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, #2d4a2d 25%, transparent 25%),
+    linear-gradient(-45deg, #2d4a2d 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #24391f 75%),
+    linear-gradient(-45deg, transparent 75%, #24391f 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  image-rendering: pixelated;
+  animation: pixelShift 3s steps(4) infinite;
+  opacity: 0.9;
+}
+
+@keyframes pixelShift {
+  0%   { background-position: 0 0, 0 8px, 8px -8px, -8px 0px; }
+  100% { background-position: 16px 16px, 16px 24px, 24px 8px, 8px 16px; }
+}
+
+.crafted-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35) 0px,
+    rgba(0, 0, 0, 0.35) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.crafted-card-wrap:hover .crafted-pixel-grid {
+  animation-duration: 1s;
 }
 
 .crafted-card-info {
@@ -69,7 +115,7 @@
   z-index: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.66) 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
   opacity: 0;
   transform: translateY(100%);
   transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -82,24 +128,26 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #a3e635;
 }
 
 .crafted-card-info h4 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 32px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 18px;
   font-weight: 700;
   margin: 0;
-  text-shadow: rgba(0, 0, 0, 0.6) 0 10px 10px;
+  line-height: 1.6;
+  text-shadow: #000 3px 3px 0;
 }
 
 .crafted-card-info p {
   margin-top: 10px;
-  font-size: 13px;
-  line-height: 1.5;
+  font-family: "VT323", monospace;
+  font-size: 16px;
+  line-height: 1.4;
   opacity: 0;
   max-width: 210px;
-  text-shadow: rgba(0, 0, 0, 0.95) 0 2px 3px;
+  text-shadow: #000 2px 2px 0;
   transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -108,7 +156,7 @@
   align-items: center;
   gap: 8px;
   margin-top: 14px;
-  color: #fff;
+  color: #a3e635;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -138,22 +186,12 @@
 }
 
 .crafted-card-wrap:hover .crafted-card-bg {
-  transition:
-    0.6s cubic-bezier(0.23, 1, 0.32, 1),
-    opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
-  opacity: 0.85;
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.95;
 }
 
 .crafted-card-wrap:hover .crafted-card {
-  transition:
-    0.6s cubic-bezier(0.23, 1, 0.32, 1),
-    box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow:
-    rgba(255, 255, 255, 0.2) 0 0 40px 5px,
-    rgba(255, 255, 255, 0.8) 0 0 0 1px,
-    rgba(0, 0, 0, 0.66) 0 30px 60px 0,
-    inset #111 0 0 0 2px,
-    inset rgba(255, 255, 255, 0.9) 0 0 0 3px;
+  box-shadow: 9px 9px 0 0 #65a30d;
 }
 
 .crafted-card-wrap:hover .crafted-card-info a:hover {
@@ -171,6 +209,6 @@
   }
 
   .crafted-card-info h4 {
-    font-size: 28px;
+    font-size: 15px;
   }
 }
