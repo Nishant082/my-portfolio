@@ -163,7 +163,7 @@ const Hero = () => (
         <a href="#about" className="group flex items-center justify-center gap-3 bg-lime-400 text-black border-4 border-black shadow-[5px_5px_0_0_#000] px-8 md:px-10 py-3 md:py-4 font-black text-[9px] md:text-[10px] tracking-widest hover:bg-lime-300 hover:shadow-[7px_7px_0_0_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all">
           EXPLORE CAREER <ChevronDown size={12} className="group-hover:translate-y-1 transition-transform" />
         </a>
-        <a href="https://drive.google.com/file/d/1GEdGNMquR0Cdsmd9e25wflu-gK0ySeNX/view?usp=sharing" target="_blank" className="flex items-center justify-center gap-3 bg-[#1b1f16] border-4 border-black shadow-[5px_5px_0_0_#000] text-white px-8 md:px-10 py-3 md:py-4 font-black text-[9px] md:text-[10px] tracking-widest hover:bg-[#242a1c] hover:shadow-[7px_7px_0_0_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all">
+        <a href="https://drive.google.com/file/d/1-MDICfZFJods_5T4yFGzUzR6v7mv8gJw/view?usp=sharing" target="_blank" className="flex items-center justify-center gap-3 bg-[#1b1f16] border-4 border-black shadow-[5px_5px_0_0_#000] text-white px-8 md:px-10 py-3 md:py-4 font-black text-[9px] md:text-[10px] tracking-widest hover:bg-[#242a1c] hover:shadow-[7px_7px_0_0_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all">
           RESUME <ExternalLink size={12} />
         </a>
       </motion.div>
